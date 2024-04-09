@@ -6,7 +6,7 @@ public class Application extends Thread {
 
     public void run() {
         try {
-            controller.CServer.startServer();
+            controller.Server.startServer();
         } catch (RemoteException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
