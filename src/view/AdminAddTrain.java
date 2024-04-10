@@ -57,6 +57,7 @@ public class AdminAddTrain extends JFrame {
 	public AdminAddTrain() {
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 		setBounds(100, 100, 894, 656);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(34, 139, 34));

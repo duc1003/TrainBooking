@@ -72,32 +72,37 @@ public class UserProfile extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnNewButton.setBounds(21, 42, 120, 41);
 		panel.add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				UserHome.frame.setVisible(true);
+			}
+		});
 		
 		JButton btnngKTi = new JButton("Tìm tàu");
 		btnngKTi.setForeground(new Color(128, 0, 128));
 		btnngKTi.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnngKTi.setBounds(185, 42, 110, 41);
 		panel.add(btnngKTi);
-		btnngKTi.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				UserRegister.frame.setVisible(true);
-			}
-		});
+//		btnngKTi.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame.setVisible(false);
+//				UserRegister.frame.setVisible(true);
+//			}
+//		});
 		
 		JButton btnngNhpVi = new JButton("Lịch sử mua vé");
 		btnngNhpVi.setForeground(new Color(128, 0, 128));
 		btnngNhpVi.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnngNhpVi.setBounds(334, 42, 174, 41);
 		panel.add(btnngNhpVi);
+		btnngNhpVi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			frame.setVisible(false);
+			UserHistory.frame.setVisible(true);
+			}
+		});
 		
-//		btnngNhpVi.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				frame.setVisible(false);
-//				AdminLogin.frame.setVisible(true);
-//			}
-//		});
-//		
 		JButton btnTiKhon = new JButton("Tài khoản");
 		btnTiKhon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

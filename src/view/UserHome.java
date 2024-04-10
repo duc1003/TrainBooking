@@ -93,7 +93,7 @@ public class UserHome extends JFrame {
 		btnngNhpVi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				AdminLogin.frame.setVisible(true);
+				UserHistory.frame.setVisible(true);
 			}
 		});
 		

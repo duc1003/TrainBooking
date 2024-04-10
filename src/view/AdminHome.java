@@ -51,6 +51,7 @@ public class AdminHome extends JFrame {
 	public AdminHome() {
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 		setBounds(100, 100, 1099, 492);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(34, 139, 34));

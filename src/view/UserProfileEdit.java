@@ -75,18 +75,24 @@ public class UserProfileEdit extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnNewButton.setBounds(21, 42, 120, 41);
 		panel.add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				UserHome.frame.setVisible(true);
+			}
+		});
 		
 		JButton btnngKTi = new JButton("Tìm tàu");
 		btnngKTi.setForeground(new Color(128, 0, 128));
 		btnngKTi.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnngKTi.setBounds(185, 42, 110, 41);
 		panel.add(btnngKTi);
-		btnngKTi.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				UserRegister.frame.setVisible(true);
-			}
-		});
+//		btnngKTi.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame.setVisible(false);
+//				UserRegister.frame.setVisible(true);
+//			}
+//		});
 		
 		JButton btnngNhpVi = new JButton("Lịch sử mua vé");
 		btnngNhpVi.setForeground(new Color(128, 0, 128));
@@ -97,7 +103,7 @@ public class UserProfileEdit extends JFrame {
 		btnngNhpVi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				AdminLogin.frame.setVisible(true);
+				UserHistory.frame.setVisible(true);
 			}
 		});
 		
