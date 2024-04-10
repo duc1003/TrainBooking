@@ -91,13 +91,13 @@ public class UserProfile extends JFrame {
 		btnngNhpVi.setBounds(334, 42, 174, 41);
 		panel.add(btnngNhpVi);
 		
-		btnngNhpVi.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				AdminLogin.frame.setVisible(true);
-			}
-		});
-		
+//		btnngNhpVi.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame.setVisible(false);
+//				AdminLogin.frame.setVisible(true);
+//			}
+//		});
+//		
 		JButton btnTiKhon = new JButton("Tài khoản");
 		btnTiKhon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
