@@ -9,7 +9,7 @@ import model.History;
 
 public interface BookingService extends Remote{
 
-	public List<History> getAllBookingsByCustomerId(String customerEmailId) throws RemoteException;
+	public List<History> getAllBookingsByCustomerId(int cardID) throws RemoteException;
 
 	public History createHistory(History bookingDetails) throws RemoteException;
 

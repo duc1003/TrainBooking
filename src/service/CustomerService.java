@@ -11,11 +11,11 @@ public interface CustomerService  extends Remote {
 
 	public List<Customer> getAllCustomers() throws RemoteException;
 
-	public String updateCustomer(Customer customer) throws RemoteException;
+	public Boolean updateCustomer(Customer customer) throws RemoteException;
 
-	public String deleteCustomer(Customer customer) throws RemoteException;
+	public Boolean deleteCustomer(int cardID) throws RemoteException;
 
-	public String registerCustomer(Customer customer) throws RemoteException;
+	public Boolean registerCustomer(Customer customer) throws RemoteException;
 	
 	public Customer loginCustomer(String email, String password) throws RemoteException;
 }

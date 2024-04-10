@@ -10,13 +10,13 @@ import model.Train;
 
 public interface TrainService extends Remote {
 
-	public String addTrain(Train train) throws RemoteException;
+	public Boolean addTrain(Train train) throws RemoteException;
 
-	public String deleteTrainById(String trainNo) throws RemoteException;
+	public Boolean deleteTrainById(String trainID) throws RemoteException;
 
-	public String updateTrain(Train train) throws RemoteException;
+	public Boolean updateTrain(Train train) throws RemoteException;
 
-	public Train getTrainById(String trainNo) throws RemoteException;
+	public Train getTrainById(String trainID) throws RemoteException;
 
 	public List<Train> getAllTrains() throws RemoteException;
 

@@ -48,5 +48,17 @@ public class DBUtils {
     //     if (conn != null) {
     //         System.out.println("connection successfully");
     //     } else System.out.println("connection fails");
+    //     Statement stm = null;
+    //     try {
+    //         stm = conn.createStatement();
+    //     } catch (SQLException e) {
+    //         // TODO Auto-generated catch block
+    //         e.printStackTrace();
+    //     }
+    //     if (stm != null) {
+    //         System.out.println("createStatement successfully");
+    //     } else {
+    //         System.out.println("createStatement fails");
+    //     }
     // }
 }
