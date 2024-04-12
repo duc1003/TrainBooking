@@ -78,7 +78,7 @@ public class UserProfileEdit extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				UserHome.frame.setVisible(true);
+				// UserHome.frame.setVisible(true);
 			}
 		});
 		

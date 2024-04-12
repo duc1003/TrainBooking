@@ -8,6 +8,7 @@ import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 
 import model.Customer;
+import utils.UserUtils;
 import controller.client;
 
 import java.awt.Button;
@@ -154,8 +155,9 @@ public class UserLogin extends JFrame {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Customer customer = client.userLogin(textField.getText(), textField_1.getText());
+				Customer customer = client.userLogin(textField.getText(), new String(textField_1.getPassword()));
 				if(customer != null){
+					UserUtils.setCurrentCustomer(customer);
 					UserHome userHome = new UserHome();
 					userHome.display();
 					UserLogin.frame.setVisible(false);

@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import model.Customer;
+
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -32,6 +35,7 @@ public class UserChangePassword extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private static Customer customer = null;
 	/**
 	 * Launch the application.
 	 */
@@ -77,7 +81,7 @@ public class UserChangePassword extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				UserHome.frame.setVisible(true);
+				// UserHome.frame.setVisible(true);
 			}
 		});
 		

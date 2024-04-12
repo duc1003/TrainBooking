@@ -10,6 +10,13 @@ public class Customer implements Serializable{
     private String email;
     private String password;
     private int phone;
+    private String name;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
     public int getCardID() {
         return cardID;
     }
