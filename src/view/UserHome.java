@@ -28,11 +28,11 @@ public class UserHome extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	static UserHome frame = new UserHome();
+	private static UserHome frame = new UserHome();
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void display() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

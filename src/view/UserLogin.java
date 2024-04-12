@@ -4,7 +4,12 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
+
+import model.Customer;
+import controller.client;
+
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -28,7 +33,7 @@ public class UserLogin extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
+	private JPasswordField textField_1;
 	static UserLogin frame = new UserLogin();
 	/**
 	 * Launch the application.
@@ -129,7 +134,7 @@ public class UserLogin extends JFrame {
 		lblPassword.setBounds(207, 276, 86, 35);
 		contentPane.add(lblPassword);
 		
-		textField_1 = new JTextField();
+		textField_1 = new JPasswordField();
 		textField_1.setColumns(10);
 		textField_1.setBounds(303, 266, 449, 45);
 		contentPane.add(textField_1);
@@ -149,6 +154,15 @@ public class UserLogin extends JFrame {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Customer customer = client.userLogin(textField.getText(), textField_1.getText());
+				if(customer != null){
+					UserHome userHome = new UserHome();
+					userHome.display();
+					UserLogin.frame.setVisible(false);
+				} else {
+					textField.setText("fails");
+					textField_1.setText("fails");
+				}
 			}
 		});
 		btnNewButton_1.setBounds(411, 360, 239, 45);
