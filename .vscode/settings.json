@@ -3,6 +3,6 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "d:\\study at IUH\\hk2_3\\vscode\\achitecture\\mysql-connector-j-8.0.33.jar"
+        "lib/mysql-connector-j-8.0.33.jar"
     ]
 }

@@ -1,7 +1,7 @@
 package constant;
 
 public class Constant {
-    public static final String DB_NAME = "trainBooking";
+    public static final String DB_NAME = "trainbooking";
     public static final String USERNAME = "root";
     public static final String PASSWORD = "Duc-2003";
     public static final String ADMIN_TABLE = "admin";

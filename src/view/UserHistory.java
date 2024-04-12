@@ -81,8 +81,8 @@ public class UserHistory extends JFrame {
 		panel.add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			frame.setVisible(false);
-			UserHome.frame.setVisible(true);
+				frame.setVisible(false);
+				UserHome.display();
 			}
 		});
 		

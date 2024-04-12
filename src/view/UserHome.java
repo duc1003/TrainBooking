@@ -8,31 +8,20 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Panel;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JSeparator;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.Label;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import view.AdminLogin;
-import view.UserRegister;
-import view.UserProfile;
 
 public class UserHome extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	public static UserHome frame = new UserHome();
+	private static UserHome frame = new UserHome();
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void display() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

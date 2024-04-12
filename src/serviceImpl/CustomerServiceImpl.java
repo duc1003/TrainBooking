@@ -112,7 +112,9 @@ public class CustomerServiceImpl extends UnicastRemoteObject implements Customer
                      customer.getCardID() + ", '" +
                      customer.getEmail() + "', '" +
                      customer.getPassword() + "', " +
-                     customer.getPhone() + ")";
+                     customer.getPhone() + "', " +
+                     customer.getName() +
+                     ")";
         try {
             if (stm.executeUpdate(query) != 0) {
                 return true;
@@ -139,6 +141,7 @@ public class CustomerServiceImpl extends UnicastRemoteObject implements Customer
                 customer.setEmail(rs.getString(Schema.Customer.EMAIL));
                 customer.setPassword(rs.getString(Schema.Customer.PASSWORD));
                 customer.setPhone(rs.getInt(Schema.Customer.PHONE));
+                customer.setName(rs.getString(Schema.Customer.NAME));
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block

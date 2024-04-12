@@ -5,6 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import model.Customer;
+import utils.UserUtils;
+
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -30,6 +34,7 @@ public class UserProfile extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	public static UserProfile frame = new UserProfile();
+	private static Customer currentCustomer;
 	/**
 	 * Launch the application.
 	 */
@@ -50,6 +55,10 @@ public class UserProfile extends JFrame {
 	 * Create the frame.
 	 */
 	public UserProfile() {
+		currentCustomer = UserUtils.getCurrentCustomer();
+		if (currentCustomer != null) {
+			System.out.println("getCurrentCustomer is successful");
+		} else System.out.println("getCurrentCustomer is failed");
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 985, 478);
@@ -75,7 +84,7 @@ public class UserProfile extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				UserHome.frame.setVisible(true);
+				UserHome.display();
 			}
 		});
 		
@@ -189,6 +198,7 @@ public class UserProfile extends JFrame {
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNewLabel_1.setBounds(597, 207, 346, 30);
 		lblNewLabel_1.setOpaque(true);
+		lblNewLabel_1.setText(currentCustomer.getEmail());
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("\r\n");
@@ -197,6 +207,7 @@ public class UserProfile extends JFrame {
 		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNewLabel_1_1.setBackground(Color.WHITE);
 		lblNewLabel_1_1.setBounds(597, 266, 346, 30);
+		lblNewLabel_1_1.setText(currentCustomer.getName());
 		contentPane.add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("\r\n");
@@ -205,6 +216,7 @@ public class UserProfile extends JFrame {
 		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNewLabel_1_2.setBackground(Color.WHITE);
 		lblNewLabel_1_2.setBounds(597, 322, 346, 30);
+		lblNewLabel_1_2.setText(currentCustomer.getPhone() + "");
 		contentPane.add(lblNewLabel_1_2);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("\r\n");
@@ -213,6 +225,7 @@ public class UserProfile extends JFrame {
 		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNewLabel_1_3.setBackground(Color.WHITE);
 		lblNewLabel_1_3.setBounds(597, 380, 346, 30);
+		lblNewLabel_1_3.setText(currentCustomer.getCardID() + "");
 		contentPane.add(lblNewLabel_1_3);
 	}
 }
