@@ -5,8 +5,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableModel;
-
 import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -17,7 +15,6 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
-import javax.swing.JTable;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Label;
@@ -26,18 +23,14 @@ import java.awt.event.MouseEvent;
 import view.AdminLogin;
 import view.UserRegister;
 import view.UserProfile;
-import javax.swing.JScrollPane;
-import java.awt.Component;
-import javax.swing.table.TableModel;
-import javax.swing.border.LineBorder;
-import javax.swing.ScrollPaneConstants;
 
-public class UserHistory extends JFrame {
+public class UserFindTrain extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	public static UserHistory frame = new UserHistory();
-	private JTable table_1;
+	static UserFindTrain frame = new UserFindTrain();
+	private JTextField textField;
+	private JTextField textField_1;
 	/**
 	 * Launch the application.
 	 */
@@ -57,13 +50,14 @@ public class UserHistory extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public UserHistory() {
+	public UserFindTrain() {
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1099, 561);
+		setBounds(100, 100, 1108, 654);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(34, 139, 34));
 		contentPane.setBackground(new Color(102, 205, 170));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -79,12 +73,6 @@ public class UserHistory extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		btnNewButton.setBounds(21, 42, 120, 41);
 		panel.add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			frame.setVisible(false);
-			UserHome.frame.setVisible(true);
-			}
-		});
 		
 		JButton btnngKTi = new JButton("Tìm tàu");
 		btnngKTi.setForeground(new Color(128, 0, 128));
@@ -104,10 +92,17 @@ public class UserHistory extends JFrame {
 		btnngNhpVi.setBounds(420, 42, 174, 41);
 		panel.add(btnngNhpVi);
 		
+		btnngNhpVi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				UserHistory.frame.setVisible(true);
+			}
+		});
+		
 		JButton btnTiKhon = new JButton("Tài khoản");
 		btnTiKhon.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
+				UserHome.frame.setVisible(false);
 				UserProfile.frame.setVisible(true);
 			}
 		});
@@ -129,43 +124,39 @@ public class UserHistory extends JFrame {
 		btnngXut.setBounds(882, 42, 174, 41);
 		panel.add(btnngXut);
 		
-		JLabel lblNewLabel = new JLabel("Lịch sử mua vé");
+		JLabel lblNewLabel = new JLabel("Tìm vé tàu");
 		lblNewLabel.setForeground(new Color(34, 139, 34));
 		lblNewLabel.setBackground(new Color(127, 255, 0));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(428, 127, 207, 35);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 26));
+		lblNewLabel.setBounds(468, 130, 156, 35);
 		contentPane.add(lblNewLabel);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(89, 221, 965, 218);
-		contentPane.add(panel_1);
-		panel_1.setLayout(null);
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(357, 253, 340, 35);
+		contentPane.add(textField);
 		
-		JScrollPane scrollPane = new JScrollPane((Component) null);
-		scrollPane.setBounds(0, 5, 965, 202);
-		scrollPane.setViewportBorder(new EmptyBorder(3, 3, 0, 3));
-		panel_1.add(scrollPane);
-        
-        table_1 = new JTable(new DefaultTableModel(
-        	new Object[][] {
-        		{"DSVN001", "10006", "NHATRANG", "SAIGON", "2024-04-26", "17", "250.75"},
-        		{"DSVN002", "10004", "SAIGON", "NHATRANG", "2024-05-12", "21", "350.75"},
-        		{null, null, null, null, null, null, null},
-        		{null, null, null, null, null, null, null},
-        		{null, null, null, null, null, null, null},
-        		{null, null, null, null, null, null, null},
-        		{null, null, null, null, null, null, null},
-        		{null, null, null, null, null, null, null},
-        	},
-        	new String[] {
-        		"TransportID", "TrainID", "Ga đi", "Ga đến", "Ngày đi", "Ghế ngồi", "Giá"
-        	}
-        ));
-        scrollPane.setViewportView(table_1);
-        table_1.setForeground(Color.DARK_GRAY);
-        table_1.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        table_1.setFillsViewportHeight(true);
+		JLabel lblTrainid_2 = new JLabel("Ga đi:");
+		lblTrainid_2.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblTrainid_2.setBounds(250, 253, 86, 35);
+		contentPane.add(lblTrainid_2);
 		
+		JLabel lblTrainid_3 = new JLabel("Ga đến:");
+		lblTrainid_3.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblTrainid_3.setBounds(250, 327, 86, 35);
+		contentPane.add(lblTrainid_3);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(357, 327, 340, 35);
+		contentPane.add(textField_1);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(357, 287, 339, 10);
+		contentPane.add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(357, 358, 339, 10);
+		contentPane.add(separator_1);
 	}
 }

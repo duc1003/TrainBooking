@@ -150,17 +150,17 @@ public class AdminAddTrain extends JFrame {
 		
 		JLabel lblTrainid_3 = new JLabel("Ga đến:");
 		lblTrainid_3.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTrainid_3.setBounds(204, 392, 86, 35);
+		lblTrainid_3.setBounds(204, 377, 86, 35);
 		contentPane.add(lblTrainid_3);
 		
 		JLabel lblTrainid_4 = new JLabel("Ghế còn trống:");
 		lblTrainid_4.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTrainid_4.setBounds(204, 457, 126, 35);
+		lblTrainid_4.setBounds(204, 441, 126, 35);
 		contentPane.add(lblTrainid_4);
 		
 		JLabel lblTrainid_5 = new JLabel("Giá vé:");
 		lblTrainid_5.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblTrainid_5.setBounds(204, 521, 86, 35);
+		lblTrainid_5.setBounds(204, 500, 86, 35);
 		contentPane.add(lblTrainid_5);
 		
 		JSeparator separator_2 = new JSeparator();
@@ -192,16 +192,16 @@ public class AdminAddTrain extends JFrame {
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
-		textField_4.setBounds(369, 461, 340, 30);
+		textField_4.setBounds(368, 445, 340, 30);
 		contentPane.add(textField_4);
 		
 		JSeparator separator_2_2 = new JSeparator();
-		separator_2_2.setBounds(368, 491, 340, 21);
+		separator_2_2.setBounds(368, 471, 340, 21);
 		contentPane.add(separator_2_2);
 		
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
-		textField_5.setBounds(370, 523, 339, 33);
+		textField_5.setBounds(369, 503, 339, 33);
 		contentPane.add(textField_5);
 		
 		JButton btnNewButton_1 = new JButton("Thêm");

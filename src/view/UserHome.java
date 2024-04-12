@@ -28,7 +28,7 @@ public class UserHome extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	static UserHome frame = new UserHome();
+	public static UserHome frame = new UserHome();
 	/**
 	 * Launch the application.
 	 */

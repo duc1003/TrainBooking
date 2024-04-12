@@ -29,7 +29,7 @@ public class UserProfile extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	static UserProfile frame = new UserProfile();
+	public static UserProfile frame = new UserProfile();
 	/**
 	 * Launch the application.
 	 */

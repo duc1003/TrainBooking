@@ -29,7 +29,7 @@ public class UserLogin extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
-	static UserLogin frame = new UserLogin();
+	public static UserLogin frame = new UserLogin();
 	/**
 	 * Launch the application.
 	 */
