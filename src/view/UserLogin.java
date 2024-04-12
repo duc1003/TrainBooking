@@ -2,40 +2,31 @@ package view;
 
 import java.awt.EventQueue;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.border.EmptyBorder;
-
-import model.Customer;
-//import utils.UserUtils;
-import controller.client;
-
-import java.awt.Button;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Panel;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JSeparator;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Color;
 import javax.swing.JButton;
-import java.awt.Label;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import view.AdminLogin;
-import view.UserRegister;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextField;
+import javax.swing.JPasswordField;
+import javax.swing.JSeparator;
 
 public class UserLogin extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JPasswordField textField_1;
-	static UserLogin frame = new UserLogin();
+	private JTextField fieldEmail;
+	private JPasswordField passwordField;
+	public static UserLogin frame = new UserLogin();
+
 	/**
 	 * Launch the application.
 	 */
@@ -43,6 +34,7 @@ public class UserLogin extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					Background frame = new Background();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,123 +43,107 @@ public class UserLogin extends JFrame {
 		});
 	}
 
-	
 	/**
 	 * Create the frame.
 	 */
 	public UserLogin() {
-		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1099, 492);
+		setBounds(100, 100, 1016, 573);
 		contentPane = new JPanel();
-		contentPane.setForeground(new Color(34, 139, 34));
-		contentPane.setBackground(new Color(102, 205, 170));
+		contentPane.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		contentPane.setAlignmentX(Component.LEFT_ALIGNMENT);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(250, 250, 210));
-		panel.setBounds(0, 0, 1096, 116);
+		panel.setBackground(new Color(102, 205, 170));
+		panel.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+		panel.setAlignmentX(Component.LEFT_ALIGNMENT);
+		panel.setBounds(-48, 0, 1102, 604);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Đăng nhập với User");
-		btnNewButton.setForeground(new Color(128, 0, 128));
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 22));
-		btnNewButton.setBounds(58, 43, 257, 41);
-		panel.add(btnNewButton);
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBackground(new Color(250, 250, 210));
+		panel_1.setBounds(38, 0, 1096, 117);
+		panel.add(panel_1);
 		
-		JButton btnngKTi = new JButton("Đăng ký tài khoản User");
-		btnngKTi.setForeground(new Color(128, 0, 128));
-		btnngKTi.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnngKTi.setBounds(378, 43, 277, 41);
-		panel.add(btnngKTi);
-		btnngKTi.addActionListener(new ActionListener() {
+		JButton menuUserLogin = new JButton("Đăng nhập với User");
+		menuUserLogin.setForeground(new Color(128, 0, 128));
+		menuUserLogin.setFont(new Font("Tahoma", Font.BOLD, 22));
+		menuUserLogin.setBounds(58, 43, 257, 41);
+		panel_1.add(menuUserLogin);
+		
+		JButton menuRegister = new JButton("Đăng ký tài khoản User");
+		menuRegister.setForeground(new Color(128, 0, 128));
+		menuRegister.setFont(new Font("Tahoma", Font.BOLD, 20));
+		menuRegister.setBounds(378, 43, 277, 41);
+		panel_1.add(menuRegister);
+		menuRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserRegister.frame.setVisible(true);
 			}
 		});
 		
-		JButton btnngNhpVi = new JButton("Đăng nhập với Admin");
-		btnngNhpVi.setForeground(new Color(128, 0, 128));
-		btnngNhpVi.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnngNhpVi.setBounds(723, 43, 257, 41);
-		panel.add(btnngNhpVi);
-		
-		btnngNhpVi.addActionListener(new ActionListener() {
+		JButton menuAdminLogin = new JButton("Đăng nhập với Admin");
+		menuAdminLogin.setForeground(new Color(128, 0, 128));
+		menuAdminLogin.setFont(new Font("Tahoma", Font.BOLD, 20));
+		menuAdminLogin.setBounds(723, 43, 257, 41);
+		panel_1.add(menuAdminLogin);
+		menuAdminLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				AdminLogin.frame.setVisible(true);
 			}
 		});
 		
-		JLabel lbl_close = new JLabel("X");
-		lbl_close.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				System.exit(0);
-			}
-		});
-		lbl_close.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lbl_close.setForeground(new Color(241, 57, 83));
-		lbl_close.setBounds(1068, 0, 17, 22);
-		panel.add(lbl_close);
+		JLabel lblbackground = new JLabel();
+		lblbackground.setBounds(10, 128, 584, 444);
+		panel.add(lblbackground);
+		lblbackground.setIcon(new ImageIcon("D:\\Phan tan\\TESTPROJECT\\TrainBooking\\src\\bg1.png"));
 		
-		textField = new JTextField();
-		textField.setBounds(303, 183, 449, 45);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		JLabel titleLogin = new JLabel("Đăng nhập");
+		titleLogin.setForeground(new Color(34, 139, 34));
+		titleLogin.setFont(new Font("Tahoma", Font.BOLD, 24));
+		titleLogin.setBackground(new Color(127, 255, 0));
+		titleLogin.setBounds(778, 188, 155, 35);
+		panel.add(titleLogin);
 		
-		JSeparator separator = new JSeparator();
-		separator.setBounds(303, 226, 449, 2);
-		contentPane.add(separator);
+		fieldEmail = new JTextField();
+		fieldEmail.setColumns(10);
+		fieldEmail.setBounds(732, 265, 249, 35);
+		panel.add(fieldEmail);
 		
-		JLabel Username = new JLabel("Username:\r\n");
-		Username.setFont(new Font("Tahoma", Font.BOLD, 16));
-		Username.setBounds(207, 193, 86, 35);
-		contentPane.add(Username);
+		JLabel lblEmail = new JLabel("Username:\r\n");
+		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblEmail.setBounds(604, 263, 86, 35);
+		panel.add(lblEmail);
 		
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblPassword.setBounds(207, 276, 86, 35);
-		contentPane.add(lblPassword);
+		lblPassword.setBounds(604, 340, 86, 35);
+		panel.add(lblPassword);
 		
-		textField_1 = new JPasswordField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(303, 266, 449, 45);
-		contentPane.add(textField_1);
+		passwordField = new JPasswordField();
+		passwordField.setColumns(10);
+		passwordField.setBounds(732, 343, 249, 33);
+		panel.add(passwordField);
+		
+		JButton btnLogin = new JButton("Login");
+		btnLogin.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		btnLogin.setBounds(759, 431, 194, 45);
+		panel.add(btnLogin);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(732, 300, 249, 0);
+		panel.add(separator);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(303, 309, 449, 2);
-		contentPane.add(separator_1);
-		
-		JLabel lblNewLabel = new JLabel("Đăng nhập");
-		lblNewLabel.setForeground(new Color(34, 139, 34));
-		lblNewLabel.setBackground(new Color(127, 255, 0));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(450, 127, 155, 35);
-		contentPane.add(lblNewLabel);
-		
-		JButton btnNewButton_1 = new JButton("Login");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Customer customer = client.userLogin(textField.getText(), new String(textField_1.getPassword()));
-				if(customer != null){
-//					UserUtils.setCurrentCustomer(customer);
-					UserHome userHome = new UserHome();
-//					userHome.display();
-					UserLogin.frame.setVisible(false);
-				} else {
-					textField.setText("fails");
-					textField_1.setText("fails");
-				}
-			}
-		});
-		btnNewButton_1.setBounds(411, 360, 239, 45);
-		contentPane.add(btnNewButton_1);
+		separator_1.setBounds(732, 375, 249, 0);
+		panel.add(separator_1);
 	}
 }

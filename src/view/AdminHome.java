@@ -55,73 +55,79 @@ public class AdminHome extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Trang chủ");
-		btnNewButton.setForeground(new Color(128, 0, 128));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnNewButton.setBounds(21, 42, 120, 41);
-		panel.add(btnNewButton);
+		JButton menuHome = new JButton("Trang chủ");
+		menuHome.setForeground(new Color(128, 0, 128));
+		menuHome.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuHome.setBounds(21, 42, 120, 41);
+		panel.add(menuHome);
 		
-		JButton btnngKTi = new JButton("Tìm tàu");
-		btnngKTi.setForeground(new Color(128, 0, 128));
-		btnngKTi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngKTi.setBounds(268, 42, 154, 41);
-		panel.add(btnngKTi);
-//		btnngKTi.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				frame.setVisible(false);
-//				UserRegister.frame.setVisible(true);
-//			}
-//		});
+		JButton menuFind = new JButton("Tìm tàu");
+		menuFind.setForeground(new Color(128, 0, 128));
+		menuFind.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuFind.setBounds(268, 42, 154, 41);
+		panel.add(menuFind);
+		menuFind.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				AdminFindTrain.frame.setVisible(true);
+			}
+		});
 		
-		JButton btnngNhpVi = new JButton("Thêm chuyến tàu");
-		btnngNhpVi.setForeground(new Color(128, 0, 128));
-		btnngNhpVi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngNhpVi.setBounds(583, 42, 174, 41);
-		panel.add(btnngNhpVi);
-		
-		btnngNhpVi.addActionListener(new ActionListener() {
+		JButton menuAdd = new JButton("Thêm chuyến tàu");
+		menuAdd.setForeground(new Color(128, 0, 128));
+		menuAdd.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuAdd.setBounds(583, 42, 174, 41);
+		panel.add(menuAdd);
+		menuAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				AdminAddTrain.frame.setVisible(true);
 			}
 		});
 		
-		JButton btnngXut = new JButton("Đăng xuất");
-		btnngXut.addActionListener(new ActionListener() {
+		menuAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				AdminAddTrain.frame.setVisible(true);
+			}
+		});
+		
+		JButton menuLogout = new JButton("Đăng xuất");
+		menuLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserLogin.frame.setVisible(true);
 			}
 		});
 		
-		btnngXut.setForeground(new Color(128, 0, 128));
-		btnngXut.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngXut.setBounds(882, 42, 174, 41);
-		panel.add(btnngXut);
+		menuLogout.setForeground(new Color(128, 0, 128));
+		menuLogout.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuLogout.setBounds(882, 42, 174, 41);
+		panel.add(menuLogout);
 		
-		JLabel lblNewLabel = new JLabel("Trang chủ quản lý chuyến tàu");
-		lblNewLabel.setForeground(new Color(34, 139, 34));
-		lblNewLabel.setBackground(new Color(127, 255, 0));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(358, 130, 368, 35);
-		contentPane.add(lblNewLabel);
+		JLabel tileHome1 = new JLabel("Trang chủ quản lý chuyến tàu");
+		tileHome1.setForeground(new Color(34, 139, 34));
+		tileHome1.setBackground(new Color(127, 255, 0));
+		tileHome1.setFont(new Font("Tahoma", Font.BOLD, 24));
+		tileHome1.setBounds(358, 130, 368, 35);
+		contentPane.add(tileHome1);
 		
-		JLabel lblNewLabel_1 = new JLabel("Liên Hệ: đức và duy");
-		lblNewLabel_1.setForeground(new Color(255, 255, 0));
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(30, 401, 183, 22);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblContact1 = new JLabel("Liên Hệ: đức và duy");
+		lblContact1.setForeground(new Color(255, 255, 0));
+		lblContact1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblContact1.setBounds(30, 401, 183, 22);
+		contentPane.add(lblContact1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("SĐT: 0123456789");
-		lblNewLabel_1_1.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel_1_1.setBounds(30, 422, 183, 22);
-		contentPane.add(lblNewLabel_1_1);
+		JLabel lblContact2 = new JLabel("SĐT: 0123456789");
+		lblContact2.setForeground(new Color(0, 0, 0));
+		lblContact2.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblContact2.setBounds(30, 422, 183, 22);
+		contentPane.add(lblContact2);
 		
-		JLabel lblNewLabel_2 = new JLabel("Chào mừng Admin đến với ứng dụng quản lý tàu chúc bạn một ngày mới vui vẻ\r\n");
-		lblNewLabel_2.setForeground(new Color(165, 42, 42));
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblNewLabel_2.setBounds(127, 189, 867, 55);
-		contentPane.add(lblNewLabel_2);
+		JLabel titleHome2 = new JLabel("Chào mừng Admin đến với ứng dụng quản lý tàu chúc bạn một ngày mới vui vẻ\r\n");
+		titleHome2.setForeground(new Color(165, 42, 42));
+		titleHome2.setFont(new Font("Tahoma", Font.BOLD, 20));
+		titleHome2.setBounds(127, 189, 867, 55);
+		contentPane.add(titleHome2);
 	}
 }

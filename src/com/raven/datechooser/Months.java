@@ -1,4 +1,4 @@
-package view.com.raven.datechooser;
+package com.raven.datechooser;
 
 public final class Months extends javax.swing.JPanel {
 
@@ -19,18 +19,18 @@ public final class Months extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cmd1 = new view.com.raven.datechooser.Button();
-        cmd2 = new view.com.raven.datechooser.Button();
-        cmd3 = new view.com.raven.datechooser.Button();
-        cmd4 = new view.com.raven.datechooser.Button();
-        cmd5 = new view.com.raven.datechooser.Button();
-        cmd6 = new view.com.raven.datechooser.Button();
-        cmd7 = new view.com.raven.datechooser.Button();
-        cmd8 = new view.com.raven.datechooser.Button();
-        cmd9 = new view.com.raven.datechooser.Button();
-        cmd10 = new view.com.raven.datechooser.Button();
-        cmd11 = new view.com.raven.datechooser.Button();
-        cmd12 = new view.com.raven.datechooser.Button();
+        cmd1 = new com.raven.datechooser.Button();
+        cmd2 = new com.raven.datechooser.Button();
+        cmd3 = new com.raven.datechooser.Button();
+        cmd4 = new com.raven.datechooser.Button();
+        cmd5 = new com.raven.datechooser.Button();
+        cmd6 = new com.raven.datechooser.Button();
+        cmd7 = new com.raven.datechooser.Button();
+        cmd8 = new com.raven.datechooser.Button();
+        cmd9 = new com.raven.datechooser.Button();
+        cmd10 = new com.raven.datechooser.Button();
+        cmd11 = new com.raven.datechooser.Button();
+        cmd12 = new com.raven.datechooser.Button();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new java.awt.GridLayout(4, 4));
@@ -130,18 +130,18 @@ public final class Months extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private view.com.raven.datechooser.Button cmd1;
-    private view.com.raven.datechooser.Button cmd10;
-    private view.com.raven.datechooser.Button cmd11;
-    private view.com.raven.datechooser.Button cmd12;
-    private view.com.raven.datechooser.Button cmd2;
-    private view.com.raven.datechooser.Button cmd3;
-    private view.com.raven.datechooser.Button cmd4;
-    private view.com.raven.datechooser.Button cmd5;
-    private view.com.raven.datechooser.Button cmd6;
-    private view.com.raven.datechooser.Button cmd7;
-    private view.com.raven.datechooser.Button cmd8;
-    private view.com.raven.datechooser.Button cmd9;
+    private com.raven.datechooser.Button cmd1;
+    private com.raven.datechooser.Button cmd10;
+    private com.raven.datechooser.Button cmd11;
+    private com.raven.datechooser.Button cmd12;
+    private com.raven.datechooser.Button cmd2;
+    private com.raven.datechooser.Button cmd3;
+    private com.raven.datechooser.Button cmd4;
+    private com.raven.datechooser.Button cmd5;
+    private com.raven.datechooser.Button cmd6;
+    private com.raven.datechooser.Button cmd7;
+    private com.raven.datechooser.Button cmd8;
+    private com.raven.datechooser.Button cmd9;
     // End of variables declaration//GEN-END:variables
 
 }

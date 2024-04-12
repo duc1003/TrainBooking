@@ -19,13 +19,13 @@ import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
 
-public class AdminLogin extends JFrame {
+public class Background extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField fieldEmail;
+	private JTextField textField;
 	private JPasswordField passwordField;
-	public static AdminLogin frame = new AdminLogin();
+	public static UserLogin frame = new UserLogin();
 
 	/**
 	 * Launch the application.
@@ -46,7 +46,7 @@ public class AdminLogin extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AdminLogin() {
+	public Background() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1016, 573);
 		contentPane = new JPanel();
@@ -76,12 +76,6 @@ public class AdminLogin extends JFrame {
 		menuUserLogin.setFont(new Font("Tahoma", Font.BOLD, 22));
 		menuUserLogin.setBounds(58, 43, 257, 41);
 		panel_1.add(menuUserLogin);
-		menuUserLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				UserLogin.frame.setVisible(true);
-			}
-		});
 		
 		JButton menuRegister = new JButton("Đăng ký tài khoản User");
 		menuRegister.setForeground(new Color(128, 0, 128));
@@ -112,22 +106,22 @@ public class AdminLogin extends JFrame {
 		panel.add(lblbackground);
 		lblbackground.setIcon(new ImageIcon("D:\\Phan tan\\TESTPROJECT\\TrainBooking\\src\\bg1.png"));
 		
-		JLabel titleLogin = new JLabel("Đăng nhập với admin\r\n");
+		JLabel titleLogin = new JLabel("Đăng nhập");
 		titleLogin.setForeground(new Color(34, 139, 34));
 		titleLogin.setFont(new Font("Tahoma", Font.BOLD, 24));
 		titleLogin.setBackground(new Color(127, 255, 0));
-		titleLogin.setBounds(719, 188, 266, 35);
+		titleLogin.setBounds(778, 188, 155, 35);
 		panel.add(titleLogin);
 		
-		fieldEmail = new JTextField();
-		fieldEmail.setColumns(10);
-		fieldEmail.setBounds(719, 265, 262, 35);
-		panel.add(fieldEmail);
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(732, 265, 249, 35);
+		panel.add(textField);
 		
-		JLabel lblEmail = new JLabel("Username:\r\n");
-		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblEmail.setBounds(604, 263, 86, 35);
-		panel.add(lblEmail);
+		JLabel lblName = new JLabel("Username:\r\n");
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblName.setBounds(604, 263, 86, 35);
+		panel.add(lblName);
 		
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -136,7 +130,7 @@ public class AdminLogin extends JFrame {
 		
 		passwordField = new JPasswordField();
 		passwordField.setColumns(10);
-		passwordField.setBounds(719, 343, 262, 33);
+		passwordField.setBounds(732, 343, 249, 33);
 		panel.add(passwordField);
 		
 		JButton btnLogin = new JButton("Login");

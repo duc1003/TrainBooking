@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view.test;
+package view;
 
-import view.com.raven.datechooser.*;
+import com.raven.datechooser.*;
 
-import view.UserFindTrain;
 import view.UserHistory;
 import view.UserHome;
 
@@ -31,13 +30,13 @@ import javax.swing.JSeparator;
  *
  * @author raven
  */
-public class Main extends JFrame {
+public class AdminFindTrain extends JFrame {
 	
     /**
      * Creates new form Main
      */
-	static Main frame = new Main();
-    public Main() {
+	static AdminFindTrain frame = new AdminFindTrain();
+    public AdminFindTrain() {
         initComponents();
         getContentPane().setBackground(new Color(240, 240, 240));
         dateChooser.addEventDateChooser(new EventDateChooser() {
@@ -60,7 +59,7 @@ public class Main extends JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dateChooser = new view.com.raven.datechooser.DateChooser();
+        dateChooser = new com.raven.datechooser.DateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         
@@ -76,86 +75,74 @@ public class Main extends JFrame {
         panel.setBounds(0, 0, 1096, 116);
         contentPane.add(panel);
         
-        JButton btnNewButton = new JButton("Trang chủ");
-        btnNewButton.setForeground(new Color(128, 0, 128));
-        btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnNewButton.setBounds(21, 42, 120, 41);
-        panel.add(btnNewButton);
-        btnNewButton.addActionListener(new ActionListener() {
+        JButton menuHome = new JButton("Trang chủ");
+        menuHome.setForeground(new Color(128, 0, 128));
+        menuHome.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        menuHome.setBounds(21, 42, 120, 41);
+        panel.add(menuHome);
+        menuHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				view.UserHome.frame.setVisible(true);
+				AdminHome.frame.setVisible(true);
 			}
 		});
         
-        JButton btnngKTi = new JButton("Tìm tàu");
-        btnngKTi.setForeground(new Color(128, 0, 128));
-        btnngKTi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnngKTi.setBounds(224, 42, 110, 41);
-        panel.add(btnngKTi);
+        JButton menuFind = new JButton("Tìm tàu");
+        menuFind.setForeground(new Color(128, 0, 128));
+        menuFind.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        menuFind.setBounds(262, 42, 145, 41);
+        panel.add(menuFind);
         
-        JButton btnngNhpVi = new JButton("Lịch sử mua vé");
-        btnngNhpVi.setForeground(new Color(128, 0, 128));
-        btnngNhpVi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnngNhpVi.setBounds(420, 42, 174, 41);
-        panel.add(btnngNhpVi);
-        btnngNhpVi.addActionListener(new ActionListener() {
+        JButton menuAdd = new JButton("Thêm chuyến tàu");
+        menuAdd.setForeground(new Color(128, 0, 128));
+        menuAdd.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        menuAdd.setBounds(567, 42, 174, 41);
+        panel.add(menuAdd);
+        menuAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			frame.setVisible(false);
-			UserHistory.frame.setVisible(true);
+			AdminAddTrain.frame.setVisible(true);
 			}
 		});
         
-        JButton btnTiKhon = new JButton("Tài khoản");
-        btnTiKhon.setForeground(new Color(128, 0, 128));
-        btnTiKhon.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnTiKhon.setBounds(650, 42, 174, 41);
-        panel.add(btnTiKhon);
-        btnTiKhon.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			frame.setVisible(false);
-			view.UserProfile.frame.setVisible(true);
-			}
-		});
-        
-        JButton btnngXut = new JButton("Đăng xuất");
-        btnngXut.setForeground(new Color(128, 0, 128));
-        btnngXut.setFont(new Font("Tahoma", Font.PLAIN, 18));
-        btnngXut.setBounds(882, 42, 174, 41);
-        panel.add(btnngXut);
-        btnngXut.addActionListener(new ActionListener() {
+        JButton menuLogout = new JButton("Đăng xuất");
+        menuLogout.setForeground(new Color(128, 0, 128));
+        menuLogout.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        menuLogout.setBounds(882, 42, 174, 41);
+        panel.add(menuLogout);
+        menuLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			frame.setVisible(false);
 			view.UserLogin.frame.setVisible(true);
 			}
 		});
         
-        JLabel lblNewLabel = new JLabel("Tìm vé tàu");
-        lblNewLabel.setForeground(new Color(34, 139, 34));
-        lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 26));
-        lblNewLabel.setBackground(new Color(127, 255, 0));
-        lblNewLabel.setBounds(468, 130, 156, 35);
-        contentPane.add(lblNewLabel);
+        JLabel titleFind = new JLabel("Tìm tàu (Admin)");
+        titleFind.setForeground(new Color(34, 139, 34));
+        titleFind.setFont(new Font("Tahoma", Font.BOLD, 26));
+        titleFind.setBackground(new Color(127, 255, 0));
+        titleFind.setBounds(413, 130, 239, 35);
+        contentPane.add(titleFind);
         
-        textField = new JTextField();
-        textField.setColumns(10);
-        textField.setBounds(357, 253, 340, 35);
-        contentPane.add(textField);
+        fieldfromStation = new JTextField();
+        fieldfromStation.setColumns(10);
+        fieldfromStation.setBounds(357, 253, 340, 35);
+        contentPane.add(fieldfromStation);
         
-        JLabel lblTrainid_2 = new JLabel("Ga đi:");
-        lblTrainid_2.setFont(new Font("Tahoma", Font.BOLD, 16));
-        lblTrainid_2.setBounds(250, 253, 86, 35);
-        contentPane.add(lblTrainid_2);
+        JLabel lblfromStation = new JLabel("Ga đi:");
+        lblfromStation.setFont(new Font("Tahoma", Font.BOLD, 16));
+        lblfromStation.setBounds(250, 253, 86, 35);
+        contentPane.add(lblfromStation);
         
-        JLabel lblTrainid_3 = new JLabel("Ga đến:");
-        lblTrainid_3.setFont(new Font("Tahoma", Font.BOLD, 16));
-        lblTrainid_3.setBounds(250, 327, 86, 35);
-        contentPane.add(lblTrainid_3);
+        JLabel lbltoStation = new JLabel("Ga đến:");
+        lbltoStation.setFont(new Font("Tahoma", Font.BOLD, 16));
+        lbltoStation.setBounds(250, 327, 86, 35);
+        contentPane.add(lbltoStation);
         
-        textField_1 = new JTextField();
-        textField_1.setColumns(10);
-        textField_1.setBounds(357, 327, 340, 35);
-        contentPane.add(textField_1);
+        fieldtoStation = new JTextField();
+        fieldtoStation.setColumns(10);
+        fieldtoStation.setBounds(357, 327, 340, 35);
+        contentPane.add(fieldtoStation);
         
         JSeparator separator = new JSeparator();
         separator.setBounds(357, 287, 339, 10);
@@ -178,27 +165,27 @@ public class Main extends JFrame {
         			.addComponent(contentPane, GroupLayout.PREFERRED_SIZE, 617, GroupLayout.PREFERRED_SIZE)
         			.addContainerGap(136, Short.MAX_VALUE))
         );
-        jButton5 = new javax.swing.JButton();
-        jButton5.setBounds(654, 411, 43, 23);
-        contentPane.add(jButton5);
+        btnDate = new javax.swing.JButton();
+        btnDate.setBounds(654, 411, 43, 23);
+        contentPane.add(btnDate);
         
-                jButton5.setText("...");
-                txtDate1 = new javax.swing.JTextField();
-                txtDate1.setBounds(357, 408, 249, 29);
-                contentPane.add(txtDate1);
+                btnDate.setText("...");
+                fieldDate = new javax.swing.JTextField();
+                fieldDate.setBounds(357, 408, 273, 29);
+                contentPane.add(fieldDate);
                 
-                        dateChooser.setTextRefernce(txtDate1);
+                        dateChooser.setTextRefernce(fieldDate);
                         
-                        JLabel lblTrainid_3_1 = new JLabel("Ngày đi\r\n");
-                        lblTrainid_3_1.setFont(new Font("Tahoma", Font.BOLD, 16));
-                        lblTrainid_3_1.setBounds(250, 408, 86, 35);
-                        contentPane.add(lblTrainid_3_1);
+                        JLabel lblDate = new JLabel("Ngày đi\r\n");
+                        lblDate.setFont(new Font("Tahoma", Font.BOLD, 16));
+                        lblDate.setBounds(250, 408, 86, 35);
+                        contentPane.add(lblDate);
                         
-                        JButton btnNewButton_1 = new JButton("Tìm");
-                        btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-                        btnNewButton_1.setBounds(435, 503, 239, 45);
-                        contentPane.add(btnNewButton_1);
-                jButton5.addActionListener(new java.awt.event.ActionListener() {
+                        JButton btnFind = new JButton("Tìm");
+                        btnFind.setFont(new Font("Tahoma", Font.PLAIN, 24));
+                        btnFind.setBounds(435, 503, 239, 45);
+                        contentPane.add(btnFind);
+                btnDate.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
                         jButton5ActionPerformed(evt);
                     }
@@ -230,16 +217,14 @@ public class Main extends JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserFindTrain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserFindTrain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserFindTrain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UserFindTrain.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -250,9 +235,9 @@ public class Main extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private view.com.raven.datechooser.DateChooser dateChooser;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JTextField txtDate1;
-    private JTextField textField;
-    private JTextField textField_1;
+    private com.raven.datechooser.DateChooser dateChooser;
+    private javax.swing.JButton btnDate;
+    private javax.swing.JTextField fieldDate;
+    private JTextField fieldfromStation;
+    private JTextField fieldtoStation;
 }

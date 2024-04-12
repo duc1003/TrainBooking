@@ -32,9 +32,9 @@ public class UserChangePassword extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	static UserChangePassword frame = new UserChangePassword();
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField fieldCPassword;
+	private JTextField fieldNewPassword;
+	private JTextField fieldNewPassword2;
 	private static Customer customer = null;
 	/**
 	 * Launch the application.
@@ -73,23 +73,23 @@ public class UserChangePassword extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Trang chủ");
-		btnNewButton.setForeground(new Color(128, 0, 128));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnNewButton.setBounds(21, 42, 120, 41);
-		panel.add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton menuHome = new JButton("Trang chủ");
+		menuHome.setForeground(new Color(128, 0, 128));
+		menuHome.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuHome.setBounds(21, 42, 120, 41);
+		panel.add(menuHome);
+		menuHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				// UserHome.frame.setVisible(true);
 			}
 		});
 		
-		JButton btnngKTi = new JButton("Tìm tàu");
-		btnngKTi.setForeground(new Color(128, 0, 128));
-		btnngKTi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngKTi.setBounds(185, 42, 110, 41);
-		panel.add(btnngKTi);
+		JButton menuFind = new JButton("Tìm tàu");
+		menuFind.setForeground(new Color(128, 0, 128));
+		menuFind.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuFind.setBounds(185, 42, 110, 41);
+		panel.add(menuFind);
 //		btnngKTi.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent e) {
 //				frame.setVisible(false);
@@ -97,130 +97,130 @@ public class UserChangePassword extends JFrame {
 //			}
 //		});
 		
-		JButton btnngNhpVi = new JButton("Lịch sử mua vé");
-		btnngNhpVi.setForeground(new Color(128, 0, 128));
-		btnngNhpVi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngNhpVi.setBounds(343, 42, 174, 41);
-		panel.add(btnngNhpVi);
+		JButton menuHistory = new JButton("Lịch sử mua vé");
+		menuHistory.setForeground(new Color(128, 0, 128));
+		menuHistory.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuHistory.setBounds(343, 42, 174, 41);
+		panel.add(menuHistory);
 		
-		btnngNhpVi.addActionListener(new ActionListener() {
+		menuHistory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserHistory.frame.setVisible(true);
 			}
 		});
 		
-		JButton btnTiKhon = new JButton("Tài khoản");
-		btnTiKhon.addActionListener(new ActionListener() {
+		JButton menuProfile = new JButton("Tài khoản");
+		menuProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserProfile.frame.setVisible(true);
 			}
 		});
-		btnTiKhon.setForeground(new Color(128, 0, 128));
-		btnTiKhon.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnTiKhon.setBounds(551, 42, 174, 41);
-		panel.add(btnTiKhon);
+		menuProfile.setForeground(new Color(128, 0, 128));
+		menuProfile.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuProfile.setBounds(551, 42, 174, 41);
+		panel.add(menuProfile);
 		
-		JButton btnngXut = new JButton("Đăng xuất");
-		btnngXut.addActionListener(new ActionListener() {
+		JButton menuLogout = new JButton("Đăng xuất");
+		menuLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserLogin.frame.setVisible(true);
 			}
 		});
 		
-		btnngXut.setForeground(new Color(128, 0, 128));
-		btnngXut.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngXut.setBounds(763, 42, 174, 41);
-		panel.add(btnngXut);
+		menuLogout.setForeground(new Color(128, 0, 128));
+		menuLogout.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuLogout.setBounds(763, 42, 174, 41);
+		panel.add(menuLogout);
 		
-		JLabel lblNewLabel = new JLabel("Thông tin mật khẩu");
-		lblNewLabel.setForeground(new Color(34, 139, 34));
-		lblNewLabel.setBackground(new Color(127, 255, 0));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(611, 139, 246, 35);
-		contentPane.add(lblNewLabel);
+		JLabel titleProfilePassword = new JLabel("Thông tin mật khẩu");
+		titleProfilePassword.setForeground(new Color(34, 139, 34));
+		titleProfilePassword.setBackground(new Color(127, 255, 0));
+		titleProfilePassword.setFont(new Font("Tahoma", Font.BOLD, 24));
+		titleProfilePassword.setBounds(611, 139, 246, 35);
+		contentPane.add(titleProfilePassword);
 		
-		JButton btnXemThng = new JButton("--> Xem thông tin tài khoản\r\n");
-		btnXemThng.addActionListener(new ActionListener() {
+		JButton btnProfileL = new JButton("--> Xem thông tin tài khoản\r\n");
+		btnProfileL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserProfile.frame.setVisible(true);
 			}
 		});
-		btnXemThng.setForeground(new Color(255, 0, 0));
-		btnXemThng.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnXemThng.setBounds(10, 153, 297, 41);
-		contentPane.add(btnXemThng);
+		btnProfileL.setForeground(new Color(255, 0, 0));
+		btnProfileL.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnProfileL.setBounds(10, 153, 297, 41);
+		contentPane.add(btnProfileL);
 		
-		JButton btnChnhSa = new JButton("--> Chỉnh sửa thông tin tài khoản\r\n\r\n");
-		btnChnhSa.setForeground(Color.RED);
-		btnChnhSa.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnChnhSa.setBounds(10, 250, 297, 41);
-		contentPane.add(btnChnhSa);
-		btnChnhSa.addActionListener(new ActionListener() {
+		JButton btnUpdateL = new JButton("--> Chỉnh sửa thông tin tài khoản\r\n\r\n");
+		btnUpdateL.setForeground(Color.RED);
+		btnUpdateL.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnUpdateL.setBounds(10, 250, 297, 41);
+		contentPane.add(btnUpdateL);
+		btnUpdateL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserProfileEdit.frame.setVisible(true);
 			}
 		});
 		
-		JButton btnThayi = new JButton("--> Thay đổi mật khẩu\r\n\r\n");
-		btnThayi.addActionListener(new ActionListener() {
+		JButton btnPasswordL = new JButton("--> Thay đổi mật khẩu\r\n\r\n");
+		btnPasswordL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnThayi.setForeground(Color.RED);
-		btnThayi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnThayi.setBounds(10, 336, 297, 41);
-		contentPane.add(btnThayi);
+		btnPasswordL.setForeground(Color.RED);
+		btnPasswordL.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnPasswordL.setBounds(10, 336, 297, 41);
+		contentPane.add(btnPasswordL);
 		
-		JLabel Username = new JLabel("Mật khẩu hiện tại:\r\n");
-		Username.setFont(new Font("Tahoma", Font.BOLD, 16));
-		Username.setBounds(347, 195, 201, 35);
-		contentPane.add(Username);
+		JLabel lblCPassword = new JLabel("Mật khẩu hiện tại:\r\n");
+		lblCPassword.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCPassword.setBounds(347, 195, 201, 35);
+		contentPane.add(lblCPassword);
 		
-		JLabel lblHVTn = new JLabel("Mật khẩu mới:");
-		lblHVTn.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblHVTn.setBounds(347, 254, 201, 35);
-		contentPane.add(lblHVTn);
+		JLabel lblNewPassword = new JLabel("Mật khẩu mới:");
+		lblNewPassword.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewPassword.setBounds(347, 254, 201, 35);
+		contentPane.add(lblNewPassword);
 		
-		JLabel lblSinThoi = new JLabel("Nhập lại mật khẩu mới:\r\n");
-		lblSinThoi.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblSinThoi.setBounds(347, 317, 201, 35);
-		contentPane.add(lblSinThoi);
+		JLabel lblNewPassword2 = new JLabel("Nhập lại mật khẩu mới:\r\n");
+		lblNewPassword2.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewPassword2.setBounds(347, 317, 201, 35);
+		contentPane.add(lblNewPassword2);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(558, 197, 376, 35);
-		contentPane.add(textField);
+		fieldCPassword = new JTextField();
+		fieldCPassword.setColumns(10);
+		fieldCPassword.setBounds(558, 197, 376, 35);
+		contentPane.add(fieldCPassword);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(558, 230, 376, 2);
 		contentPane.add(separator);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(558, 256, 376, 35);
-		contentPane.add(textField_1);
+		fieldNewPassword = new JTextField();
+		fieldNewPassword.setColumns(10);
+		fieldNewPassword.setBounds(558, 256, 376, 35);
+		contentPane.add(fieldNewPassword);
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(558, 291, 376, 2);
 		contentPane.add(separator_1);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(558, 317, 376, 35);
-		contentPane.add(textField_2);
+		fieldNewPassword2 = new JTextField();
+		fieldNewPassword2.setColumns(10);
+		fieldNewPassword2.setBounds(558, 317, 376, 35);
+		contentPane.add(fieldNewPassword2);
 		
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBounds(558, 351, 376, 2);
 		contentPane.add(separator_2);
 		
-		JButton btnNewButton_1 = new JButton("Thay đổi mật khẩu");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		btnNewButton_1.setBounds(611, 385, 246, 45);
-		contentPane.add(btnNewButton_1);
+		JButton btnPassword = new JButton("Thay đổi mật khẩu");
+		btnPassword.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		btnPassword.setBounds(611, 385, 246, 45);
+		contentPane.add(btnPassword);
 	}
 }

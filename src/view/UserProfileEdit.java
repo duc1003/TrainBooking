@@ -29,10 +29,10 @@ public class UserProfileEdit extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	static UserProfileEdit frame = new UserProfileEdit();
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField fieldEmail;
+	private JTextField fieldName;
+	private JTextField fieldPhone;
+	private JTextField fieldCardID;
 	/**
 	 * Launch the application.
 	 */
@@ -70,23 +70,23 @@ public class UserProfileEdit extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Trang chủ");
-		btnNewButton.setForeground(new Color(128, 0, 128));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnNewButton.setBounds(21, 42, 120, 41);
-		panel.add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton menuHome = new JButton("Trang chủ");
+		menuHome.setForeground(new Color(128, 0, 128));
+		menuHome.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuHome.setBounds(21, 42, 120, 41);
+		panel.add(menuHome);
+		menuHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				// UserHome.frame.setVisible(true);
 			}
 		});
 		
-		JButton btnngKTi = new JButton("Tìm tàu");
-		btnngKTi.setForeground(new Color(128, 0, 128));
-		btnngKTi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngKTi.setBounds(185, 42, 110, 41);
-		panel.add(btnngKTi);
+		JButton menuFind = new JButton("Tìm tàu");
+		menuFind.setForeground(new Color(128, 0, 128));
+		menuFind.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuFind.setBounds(185, 42, 110, 41);
+		panel.add(menuFind);
 //		btnngKTi.addActionListener(new ActionListener() {
 //			public void actionPerformed(ActionEvent e) {
 //				frame.setVisible(false);
@@ -94,138 +94,138 @@ public class UserProfileEdit extends JFrame {
 //			}
 //		});
 		
-		JButton btnngNhpVi = new JButton("Lịch sử mua vé");
-		btnngNhpVi.setForeground(new Color(128, 0, 128));
-		btnngNhpVi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngNhpVi.setBounds(343, 42, 174, 41);
-		panel.add(btnngNhpVi);
+		JButton menuHistory = new JButton("Lịch sử mua vé");
+		menuHistory.setForeground(new Color(128, 0, 128));
+		menuHistory.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuHistory.setBounds(343, 42, 174, 41);
+		panel.add(menuHistory);
 		
-		btnngNhpVi.addActionListener(new ActionListener() {
+		menuHistory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserHistory.frame.setVisible(true);
 			}
 		});
 		
-		JButton btnTiKhon = new JButton("Tài khoản");
-		btnTiKhon.addActionListener(new ActionListener() {
+		JButton menuProfile = new JButton("Tài khoản");
+		menuProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnTiKhon.setForeground(new Color(128, 0, 128));
-		btnTiKhon.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnTiKhon.setBounds(551, 42, 174, 41);
-		panel.add(btnTiKhon);
+		menuProfile.setForeground(new Color(128, 0, 128));
+		menuProfile.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuProfile.setBounds(551, 42, 174, 41);
+		panel.add(menuProfile);
 		
-		JButton btnngXut = new JButton("Đăng xuất");
-		btnngXut.addActionListener(new ActionListener() {
+		JButton menuLogout = new JButton("Đăng xuất");
+		menuLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserLogin.frame.setVisible(true);
 			}
 		});
 		
-		btnngXut.setForeground(new Color(128, 0, 128));
-		btnngXut.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngXut.setBounds(763, 42, 174, 41);
-		panel.add(btnngXut);
+		menuLogout.setForeground(new Color(128, 0, 128));
+		menuLogout.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuLogout.setBounds(763, 42, 174, 41);
+		panel.add(menuLogout);
 		
-		JLabel lblNewLabel = new JLabel("Thông tin cá nhân\r\n");
-		lblNewLabel.setForeground(new Color(34, 139, 34));
-		lblNewLabel.setBackground(new Color(127, 255, 0));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(636, 140, 233, 35);
-		contentPane.add(lblNewLabel);
+		JLabel titleProfile = new JLabel("Thông tin cá nhân\r\n");
+		titleProfile.setForeground(new Color(34, 139, 34));
+		titleProfile.setBackground(new Color(127, 255, 0));
+		titleProfile.setFont(new Font("Tahoma", Font.BOLD, 24));
+		titleProfile.setBounds(636, 140, 233, 35);
+		contentPane.add(titleProfile);
 		
-		JButton btnXemThng = new JButton("--> Xem thông tin tài khoản\r\n");
-		btnXemThng.addActionListener(new ActionListener() {
+		JButton btnProfileL = new JButton("--> Xem thông tin tài khoản\r\n");
+		btnProfileL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserProfile.frame.setVisible(true);
 			}
 		});
-		btnXemThng.setForeground(new Color(255, 0, 0));
-		btnXemThng.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnXemThng.setBounds(10, 161, 297, 41);
-		contentPane.add(btnXemThng);
+		btnProfileL.setForeground(new Color(255, 0, 0));
+		btnProfileL.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnProfileL.setBounds(10, 161, 297, 41);
+		contentPane.add(btnProfileL);
 		
-		JButton btnChnhSa = new JButton("--> Chỉnh sửa thông tin tài khoản\r\n\r\n");
-		btnChnhSa.setForeground(Color.RED);
-		btnChnhSa.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnChnhSa.setBounds(10, 239, 297, 41);
-		contentPane.add(btnChnhSa);
+		JButton btnUpdateL = new JButton("--> Chỉnh sửa thông tin tài khoản\r\n\r\n");
+		btnUpdateL.setForeground(Color.RED);
+		btnUpdateL.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnUpdateL.setBounds(10, 239, 297, 41);
+		contentPane.add(btnUpdateL);
 		
-		JButton btnThayi = new JButton("--> Thay đổi mật khẩu\r\n\r\n");
-		btnThayi.addActionListener(new ActionListener() {
+		JButton btnPasswordL = new JButton("--> Thay đổi mật khẩu\r\n\r\n");
+		btnPasswordL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserChangePassword.frame.setVisible(true);
 			}
 		});
-		btnThayi.setForeground(Color.RED);
-		btnThayi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnThayi.setBounds(10, 313, 297, 41);
-		contentPane.add(btnThayi);
+		btnPasswordL.setForeground(Color.RED);
+		btnPasswordL.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnPasswordL.setBounds(10, 313, 297, 41);
+		contentPane.add(btnPasswordL);
 		
-		JLabel Username = new JLabel("Username:\r\n");
-		Username.setFont(new Font("Tahoma", Font.BOLD, 16));
-		Username.setBounds(412, 195, 110, 35);
-		contentPane.add(Username);
+		JLabel lblEmail = new JLabel("Username:\r\n");
+		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblEmail.setBounds(412, 195, 110, 35);
+		contentPane.add(lblEmail);
 		
-		JLabel lblHVTn = new JLabel("Họ và tên:\r\n");
-		lblHVTn.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblHVTn.setBounds(412, 254, 110, 35);
-		contentPane.add(lblHVTn);
+		JLabel lblName = new JLabel("Họ và tên:\r\n");
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblName.setBounds(412, 254, 110, 35);
+		contentPane.add(lblName);
 		
-		JLabel lblSinThoi = new JLabel("Số điện thoại:");
-		lblSinThoi.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblSinThoi.setBounds(412, 317, 110, 35);
-		contentPane.add(lblSinThoi);
+		JLabel lblPhone = new JLabel("Số điện thoại:");
+		lblPhone.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblPhone.setBounds(412, 317, 110, 35);
+		contentPane.add(lblPhone);
 		
-		JLabel lblCccd = new JLabel("CCCD:\r\n");
-		lblCccd.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblCccd.setBounds(412, 382, 110, 35);
-		contentPane.add(lblCccd);
+		JLabel lblCardID = new JLabel("CCCD:\r\n");
+		lblCardID.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCardID.setBounds(412, 382, 110, 35);
+		contentPane.add(lblCardID);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(539, 197, 395, 35);
-		contentPane.add(textField);
+		fieldEmail = new JTextField();
+		fieldEmail.setColumns(10);
+		fieldEmail.setBounds(539, 197, 395, 35);
+		contentPane.add(fieldEmail);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(538, 229, 396, 2);
 		contentPane.add(separator);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(539, 256, 395, 35);
-		contentPane.add(textField_1);
+		fieldName = new JTextField();
+		fieldName.setColumns(10);
+		fieldName.setBounds(539, 256, 395, 35);
+		contentPane.add(fieldName);
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(538, 291, 396, 2);
 		contentPane.add(separator_1);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(539, 317, 395, 35);
-		contentPane.add(textField_2);
+		fieldPhone = new JTextField();
+		fieldPhone.setColumns(10);
+		fieldPhone.setBounds(539, 317, 395, 35);
+		contentPane.add(fieldPhone);
 		
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBounds(538, 351, 396, 2);
 		contentPane.add(separator_2);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(539, 384, 395, 35);
-		contentPane.add(textField_3);
+		fieldCardID = new JTextField();
+		fieldCardID.setColumns(10);
+		fieldCardID.setBounds(539, 384, 395, 35);
+		contentPane.add(fieldCardID);
 		
 		JSeparator separator_3 = new JSeparator();
 		separator_3.setBounds(538, 415, 396, 2);
 		contentPane.add(separator_3);
 		
-		JButton btnNewButton_1 = new JButton("Sửa");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		btnNewButton_1.setBounds(691, 430, 110, 45);
-		contentPane.add(btnNewButton_1);
+		JButton btnUpdate = new JButton("Sửa");
+		btnUpdate.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		btnUpdate.setBounds(691, 430, 110, 45);
+		contentPane.add(btnUpdate);
 	}
 }

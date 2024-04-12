@@ -32,12 +32,12 @@ import javax.swing.table.TableModel;
 import javax.swing.border.LineBorder;
 import javax.swing.ScrollPaneConstants;
 
-public class UserHistory extends JFrame {
+public class UserChooseTrain extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	public static UserHistory frame = new UserHistory();
-	private JTable TableHistory;
+	public static UserChooseTrain frame = new UserChooseTrain();
+	private JTable TableChooseTrain;
 	/**
 	 * Launch the application.
 	 */
@@ -57,7 +57,7 @@ public class UserHistory extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public UserHistory() {
+	public UserChooseTrain() {
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1099, 561);
@@ -91,18 +91,24 @@ public class UserHistory extends JFrame {
 		menuFind.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		menuFind.setBounds(224, 42, 110, 41);
 		panel.add(menuFind);
-		menuFind.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				UserFindTrain.frame.setVisible(true);
-			}
-		});
+//		btnngKTi.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				frame.setVisible(false);
+//				UserRegister.frame.setVisible(true);
+//			}
+//		});
 		
 		JButton menuHistory = new JButton("Lịch sử mua vé");
 		menuHistory.setForeground(new Color(128, 0, 128));
 		menuHistory.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		menuHistory.setBounds(420, 42, 174, 41);
 		panel.add(menuHistory);
+		menuHistory.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				UserHistory.frame.setVisible(true);
+			}
+		});
 		
 		JButton menuProfile = new JButton("Tài khoản");
 		menuProfile.addActionListener(new ActionListener() {
@@ -129,12 +135,12 @@ public class UserHistory extends JFrame {
 		menuLogout.setBounds(882, 42, 174, 41);
 		panel.add(menuLogout);
 		
-		JLabel titleHistory = new JLabel("Lịch sử mua vé");
-		titleHistory.setForeground(new Color(34, 139, 34));
-		titleHistory.setBackground(new Color(127, 255, 0));
-		titleHistory.setFont(new Font("Tahoma", Font.BOLD, 24));
-		titleHistory.setBounds(428, 127, 207, 35);
-		contentPane.add(titleHistory);
+		JLabel titleChooseTrain = new JLabel("Chọn tàu");
+		titleChooseTrain.setForeground(new Color(34, 139, 34));
+		titleChooseTrain.setBackground(new Color(127, 255, 0));
+		titleChooseTrain.setFont(new Font("Tahoma", Font.BOLD, 24));
+		titleChooseTrain.setBounds(529, 130, 125, 35);
+		contentPane.add(titleChooseTrain);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.WHITE);
@@ -143,29 +149,30 @@ public class UserHistory extends JFrame {
 		panel_1.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane((Component) null);
-		scrollPane.setBounds(0, 5, 965, 202);
+		scrollPane.setBounds(0, 5, 955, 202);
 		scrollPane.setViewportBorder(new EmptyBorder(3, 3, 0, 3));
 		panel_1.add(scrollPane);
         
-        TableHistory = new JTable(new DefaultTableModel(
+        TableChooseTrain = new JTable(new DefaultTableModel(
         	new Object[][] {
-        		{"DSVN001", "10006", "NHATRANG", "SAIGON", "2024-04-26", "17", "250.75"},
-        		{"DSVN002", "10004", "SAIGON", "NHATRANG", "2024-05-12", "21", "350.75"},
-        		{null, null, null, null, null, null, null},
-        		{null, null, null, null, null, null, null},
-        		{null, null, null, null, null, null, null},
-        		{null, null, null, null, null, null, null},
-        		{null, null, null, null, null, null, null},
-        		{null, null, null, null, null, null, null},
+        		{"SNT8", "10001", "NHATRANG", "SAIGON", "", "17", "250.75", "Đặt"},
+        		{"SE10", "10002", "SAIGON", "NHATRANG", "", "21", "350.75", "Đặt"},
+        		{null, null, null, null, null, null, null, null},
+        		{null, null, null, null, null, null, null, null},
+        		{null, null, null, null, null, null, null, null},
+        		{null, null, null, null, null, null, null, null},
+        		{null, null, null, null, null, null, null, null},
+        		{null, null, null, null, null, null, null, null},
         	},
         	new String[] {
-        		"TransportID", "TrainID", "Ga đi", "Ga đến", "Ngày đi", "Ghế ngồi", "Giá"
+        		"Tên tàu", "TrainID", "Ga đi", "Ga đến", "Giờ khởi hành", "Ghế còn trống", "Giá vé", "Đặt vé"
         	}
         ));
-        scrollPane.setViewportView(TableHistory);
-        TableHistory.setForeground(Color.DARK_GRAY);
-        TableHistory.setFont(new Font("Tahoma", Font.PLAIN, 16));
-        TableHistory.setFillsViewportHeight(true);
+        TableChooseTrain.setCellSelectionEnabled(true);
+        scrollPane.setViewportView(TableChooseTrain);
+        TableChooseTrain.setForeground(Color.DARK_GRAY);
+        TableChooseTrain.setFont(new Font("Tahoma", Font.PLAIN, 16));
+        TableChooseTrain.setFillsViewportHeight(true);
 		
 	}
 }

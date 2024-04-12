@@ -27,11 +27,11 @@ public class UserRegister extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField fieldEmail;
+	private JTextField fieldPassword;
+	private JTextField fieldName;
+	private JTextField fieldPhone;
+	private JTextField fieldCardID;
 	static UserRegister frame = new UserRegister();
 
 	/**
@@ -71,37 +71,37 @@ public class UserRegister extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Đăng nhập với User");
-		btnNewButton.setForeground(new Color(128, 0, 128));
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 22));
-		btnNewButton.setBounds(58, 43, 257, 41);
-		panel.add(btnNewButton);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton menuUserLogin = new JButton("Đăng nhập với User");
+		menuUserLogin.setForeground(new Color(128, 0, 128));
+		menuUserLogin.setFont(new Font("Tahoma", Font.BOLD, 22));
+		menuUserLogin.setBounds(58, 43, 257, 41);
+		panel.add(menuUserLogin);
+		menuUserLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserLogin.frame.setVisible(true);
 			}
 		});
 		
-		JButton btnngKTi = new JButton("Đăng ký tài khoản User");
-		btnngKTi.setForeground(new Color(128, 0, 128));
-		btnngKTi.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnngKTi.setBounds(378, 43, 277, 41);
-		panel.add(btnngKTi);
+		JButton menuRegister = new JButton("Đăng ký tài khoản User");
+		menuRegister.setForeground(new Color(128, 0, 128));
+		menuRegister.setFont(new Font("Tahoma", Font.BOLD, 20));
+		menuRegister.setBounds(378, 43, 277, 41);
+		panel.add(menuRegister);
 		
 	
 		
-		JButton btnngNhpVi = new JButton("Đăng nhập với Admin");
-		btnngNhpVi.addActionListener(new ActionListener() {
+		JButton menuAdminLogin = new JButton("Đăng nhập với Admin");
+		menuAdminLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				AdminLogin.frame.setVisible(true);
 			}
 		});
-		btnngNhpVi.setForeground(new Color(128, 0, 128));
-		btnngNhpVi.setFont(new Font("Tahoma", Font.BOLD, 20));
-		btnngNhpVi.setBounds(723, 43, 257, 41);
-		panel.add(btnngNhpVi);
+		menuAdminLogin.setForeground(new Color(128, 0, 128));
+		menuAdminLogin.setFont(new Font("Tahoma", Font.BOLD, 20));
+		menuAdminLogin.setBounds(723, 43, 257, 41);
+		panel.add(menuAdminLogin);
 		
 		JLabel lbl_close = new JLabel("X");
 		lbl_close.addMouseListener(new MouseAdapter() {
@@ -115,69 +115,69 @@ public class UserRegister extends JFrame {
 		lbl_close.setBounds(1068, 0, 17, 22);
 		panel.add(lbl_close);
 		
-		textField = new JTextField();
-		textField.setBounds(330, 173, 449, 45);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		fieldEmail = new JTextField();
+		fieldEmail.setBounds(330, 173, 449, 45);
+		contentPane.add(fieldEmail);
+		fieldEmail.setColumns(10);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(330, 217, 449, 12);
 		contentPane.add(separator);
 		
-		JLabel Username = new JLabel("Username:\r\n");
-		Username.setFont(new Font("Tahoma", Font.BOLD, 16));
-		Username.setBounds(202, 183, 86, 35);
-		contentPane.add(Username);
+		JLabel lblEmail = new JLabel("Username:\r\n");
+		lblEmail.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblEmail.setBounds(202, 183, 86, 35);
+		contentPane.add(lblEmail);
 		
 		JLabel lblPassword = new JLabel("Password:");
 		lblPassword.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblPassword.setBounds(202, 249, 86, 35);
 		contentPane.add(lblPassword);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(330, 239, 449, 45);
-		contentPane.add(textField_1);
+		fieldPassword = new JTextField();
+		fieldPassword.setColumns(10);
+		fieldPassword.setBounds(330, 239, 449, 45);
+		contentPane.add(fieldPassword);
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(330, 282, 449, 2);
 		contentPane.add(separator_1);
 		
-		JLabel lblNewLabel = new JLabel("Đăng ký");
-		lblNewLabel.setForeground(new Color(34, 139, 34));
-		lblNewLabel.setBackground(new Color(127, 255, 0));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(450, 127, 155, 35);
-		contentPane.add(lblNewLabel);
+		JLabel titleRegister = new JLabel("Đăng ký");
+		titleRegister.setForeground(new Color(34, 139, 34));
+		titleRegister.setBackground(new Color(127, 255, 0));
+		titleRegister.setFont(new Font("Tahoma", Font.BOLD, 24));
+		titleRegister.setBounds(465, 127, 118, 35);
+		contentPane.add(titleRegister);
 		
-		JButton btnNewButton_1 = new JButton("Đăng ký tài khoản");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton btnRegister = new JButton("Đăng ký tài khoản");
+		btnRegister.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setBounds(418, 541, 239, 45);
-		contentPane.add(btnNewButton_1);
+		btnRegister.setBounds(418, 541, 239, 45);
+		contentPane.add(btnRegister);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(330, 309, 449, 45);
-		contentPane.add(textField_2);
+		fieldName = new JTextField();
+		fieldName.setColumns(10);
+		fieldName.setBounds(330, 309, 449, 45);
+		contentPane.add(fieldName);
 		
-		JLabel lblHVTn = new JLabel("Họ và tên:");
-		lblHVTn.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblHVTn.setBounds(202, 319, 86, 35);
-		contentPane.add(lblHVTn);
+		JLabel lblName = new JLabel("Họ và tên:");
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblName.setBounds(202, 319, 86, 35);
+		contentPane.add(lblName);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(330, 382, 449, 45);
-		contentPane.add(textField_3);
+		fieldPhone = new JTextField();
+		fieldPhone.setColumns(10);
+		fieldPhone.setBounds(330, 382, 449, 45);
+		contentPane.add(fieldPhone);
 		
-		JLabel lblSinThoi = new JLabel("Số điện thoại:");
-		lblSinThoi.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblSinThoi.setBounds(202, 392, 118, 35);
-		contentPane.add(lblSinThoi);
+		JLabel lblPhone = new JLabel("Số điện thoại:");
+		lblPhone.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblPhone.setBounds(202, 392, 118, 35);
+		contentPane.add(lblPhone);
 		
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setBounds(330, 354, 449, 2);
@@ -187,18 +187,18 @@ public class UserRegister extends JFrame {
 		separator_3.setBounds(330, 425, 449, 2);
 		contentPane.add(separator_3);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(330, 450, 449, 45);
-		contentPane.add(textField_4);
+		fieldCardID = new JTextField();
+		fieldCardID.setColumns(10);
+		fieldCardID.setBounds(330, 450, 449, 45);
+		contentPane.add(fieldCardID);
 		
 		JSeparator separator_2_1 = new JSeparator();
 		separator_2_1.setBounds(330, 493, 449, 2);
 		contentPane.add(separator_2_1);
 		
-		JLabel lblCccd = new JLabel("CCCD:");
-		lblCccd.setFont(new Font("Tahoma", Font.BOLD, 16));
-		lblCccd.setBounds(202, 465, 118, 35);
-		contentPane.add(lblCccd);
+		JLabel lblCardID = new JLabel("CCCD:");
+		lblCardID.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblCardID.setBounds(202, 465, 118, 35);
+		contentPane.add(lblCardID);
 	}
 }

@@ -55,85 +55,85 @@ public class UserHome extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Trang chủ");
-		btnNewButton.setForeground(new Color(128, 0, 128));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnNewButton.setBounds(21, 42, 120, 41);
-		panel.add(btnNewButton);
+		JButton menuHome = new JButton("Trang chủ");
+		menuHome.setForeground(new Color(128, 0, 128));
+		menuHome.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuHome.setBounds(21, 42, 120, 41);
+		panel.add(menuHome);
 		
-		JButton btnngKTi = new JButton("Tìm tàu");
-		btnngKTi.setForeground(new Color(128, 0, 128));
-		btnngKTi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngKTi.setBounds(224, 42, 110, 41);
-		panel.add(btnngKTi);
-//		btnngKTi.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				frame.setVisible(false);
-//				UserRegister.frame.setVisible(true);
-//			}
-//		});
+		JButton menuFind = new JButton("Tìm tàu");
+		menuFind.setForeground(new Color(128, 0, 128));
+		menuFind.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuFind.setBounds(224, 42, 110, 41);
+		panel.add(menuFind);
+		menuFind.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				UserFindTrain.frame.setVisible(true);
+			}
+		});
 		
-		JButton btnngNhpVi = new JButton("Lịch sử mua vé");
-		btnngNhpVi.setForeground(new Color(128, 0, 128));
-		btnngNhpVi.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngNhpVi.setBounds(420, 42, 174, 41);
-		panel.add(btnngNhpVi);
+		JButton menuHistory = new JButton("Lịch sử mua vé");
+		menuHistory.setForeground(new Color(128, 0, 128));
+		menuHistory.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuHistory.setBounds(420, 42, 174, 41);
+		panel.add(menuHistory);
 		
-		btnngNhpVi.addActionListener(new ActionListener() {
+		menuHistory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserHistory.frame.setVisible(true);
 			}
 		});
 		
-		JButton btnTiKhon = new JButton("Tài khoản");
-		btnTiKhon.addActionListener(new ActionListener() {
+		JButton menuProfile = new JButton("Tài khoản");
+		menuProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UserHome.frame.setVisible(false);
 				UserProfile.frame.setVisible(true);
 			}
 		});
-		btnTiKhon.setForeground(new Color(128, 0, 128));
-		btnTiKhon.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnTiKhon.setBounds(650, 42, 174, 41);
-		panel.add(btnTiKhon);
+		menuProfile.setForeground(new Color(128, 0, 128));
+		menuProfile.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuProfile.setBounds(650, 42, 174, 41);
+		panel.add(menuProfile);
 		
-		JButton btnngXut = new JButton("Đăng xuất");
-		btnngXut.addActionListener(new ActionListener() {
+		JButton menuLogout = new JButton("Đăng xuất");
+		menuLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserLogin.frame.setVisible(true);
 			}
 		});
 		
-		btnngXut.setForeground(new Color(128, 0, 128));
-		btnngXut.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnngXut.setBounds(882, 42, 174, 41);
-		panel.add(btnngXut);
+		menuLogout.setForeground(new Color(128, 0, 128));
+		menuLogout.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		menuLogout.setBounds(882, 42, 174, 41);
+		panel.add(menuLogout);
 		
-		JLabel lblNewLabel = new JLabel("Trang chủ mua vé tàu");
-		lblNewLabel.setForeground(new Color(34, 139, 34));
-		lblNewLabel.setBackground(new Color(127, 255, 0));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		lblNewLabel.setBounds(387, 128, 285, 35);
-		contentPane.add(lblNewLabel);
+		JLabel titleHome = new JLabel("Trang chủ mua vé tàu");
+		titleHome.setForeground(new Color(34, 139, 34));
+		titleHome.setBackground(new Color(127, 255, 0));
+		titleHome.setFont(new Font("Tahoma", Font.BOLD, 24));
+		titleHome.setBounds(387, 128, 285, 35);
+		contentPane.add(titleHome);
 		
-		JLabel lblNewLabel_1 = new JLabel("Liên Hệ: đức và duy");
-		lblNewLabel_1.setForeground(new Color(255, 255, 0));
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(30, 401, 183, 22);
-		contentPane.add(lblNewLabel_1);
+		JLabel lblContactName = new JLabel("Liên Hệ: đức và duy");
+		lblContactName.setForeground(new Color(255, 255, 0));
+		lblContactName.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblContactName.setBounds(30, 401, 183, 22);
+		contentPane.add(lblContactName);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("SĐT: 0123456789");
-		lblNewLabel_1_1.setForeground(new Color(0, 0, 0));
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel_1_1.setBounds(30, 422, 183, 22);
-		contentPane.add(lblNewLabel_1_1);
+		JLabel lblContactPhone = new JLabel("SĐT: 0123456789");
+		lblContactPhone.setForeground(new Color(0, 0, 0));
+		lblContactPhone.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblContactPhone.setBounds(30, 422, 183, 22);
+		contentPane.add(lblContactPhone);
 		
-		JLabel lblNewLabel_2 = new JLabel("Chào mừng bạn đến với ứng dụng đặt vé tàu chúng tôi chúc bạn một ngày mới vui vẻ\r\n");
-		lblNewLabel_2.setForeground(new Color(165, 42, 42));
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblNewLabel_2.setBounds(98, 189, 867, 55);
-		contentPane.add(lblNewLabel_2);
+		JLabel titleHome2 = new JLabel("Chào mừng bạn đến với ứng dụng đặt vé tàu chúng tôi chúc bạn một ngày mới vui vẻ\r\n");
+		titleHome2.setForeground(new Color(165, 42, 42));
+		titleHome2.setFont(new Font("Tahoma", Font.BOLD, 20));
+		titleHome2.setBounds(98, 189, 867, 55);
+		contentPane.add(titleHome2);
 	}
 }

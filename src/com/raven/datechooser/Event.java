@@ -1,4 +1,4 @@
-package view.com.raven.datechooser;
+package com.raven.datechooser;
 
 import java.awt.event.MouseEvent;
 
