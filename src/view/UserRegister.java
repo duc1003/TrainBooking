@@ -121,7 +121,7 @@ public class UserRegister extends JFrame {
 		textField.setColumns(10);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(330, 216, 449, 2);
+		separator.setBounds(330, 217, 449, 12);
 		contentPane.add(separator);
 		
 		JLabel Username = new JLabel("Username:\r\n");
