@@ -18,4 +18,6 @@ public interface CustomerService  extends Remote {
 	public Boolean registerCustomer(Customer customer) throws RemoteException;
 	
 	public Customer loginCustomer(String email, String password) throws RemoteException;
+
+	public Boolean changePassword(Customer customer) throws RemoteException;
 }

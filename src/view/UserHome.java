@@ -5,7 +5,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -90,7 +89,8 @@ public class UserHome extends JFrame {
 		menuProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UserHome.frame.setVisible(false);
-				UserProfile.frame.setVisible(true);
+				UserProfile userProfile = new UserProfile();
+				userProfile.display();
 			}
 		});
 		menuProfile.setForeground(new Color(128, 0, 128));

@@ -4,31 +4,28 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
-import java.awt.Button;
+
+import controller.client;
+import model.Customer;
+import utils.UserUtils;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Panel;
-import java.awt.Window;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.Label;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import view.AdminLogin;
 
 public class UserRegister extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField fieldEmail;
-	private JTextField fieldPassword;
+	private JPasswordField fieldPassword;
 	private JTextField fieldName;
 	private JTextField fieldPhone;
 	private JTextField fieldCardID;
@@ -103,17 +100,17 @@ public class UserRegister extends JFrame {
 		menuAdminLogin.setBounds(723, 43, 257, 41);
 		panel.add(menuAdminLogin);
 		
-		JLabel lbl_close = new JLabel("X");
-		lbl_close.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				System.exit(0);
-			}
-		});
-		lbl_close.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lbl_close.setForeground(new Color(241, 57, 83));
-		lbl_close.setBounds(1068, 0, 17, 22);
-		panel.add(lbl_close);
+		// JLabel lbl_close = new JLabel("X");
+		// lbl_close.addMouseListener(new MouseAdapter() {
+		// 	@Override
+		// 	public void mouseClicked(MouseEvent e) {
+		// 		System.exit(0);
+		// 	}
+		// });
+		// lbl_close.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		// lbl_close.setForeground(new Color(241, 57, 83));
+		// lbl_close.setBounds(1068, 0, 17, 22);
+		// panel.add(lbl_close);
 		
 		fieldEmail = new JTextField();
 		fieldEmail.setBounds(330, 173, 449, 45);
@@ -134,7 +131,7 @@ public class UserRegister extends JFrame {
 		lblPassword.setBounds(202, 249, 86, 35);
 		contentPane.add(lblPassword);
 		
-		fieldPassword = new JTextField();
+		fieldPassword = new JPasswordField();
 		fieldPassword.setColumns(10);
 		fieldPassword.setBounds(330, 239, 449, 45);
 		contentPane.add(fieldPassword);
@@ -154,6 +151,20 @@ public class UserRegister extends JFrame {
 		btnRegister.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		btnRegister.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Customer customer = new Customer();
+				customer.setCardID(fieldCardID.getText());
+				customer.setEmail(fieldEmail.getText());
+				customer.setName(fieldName.getText());
+				customer.setPhone(fieldPhone.getText());
+				customer.setPassword(new String(fieldPassword.getPassword()));
+				boolean success = client.userRegister(customer);
+				if (success) {
+					UserUtils.setCurrentCustomer(customer);
+					UserHome.display();
+					frame.setVisible(false);
+				} else {
+
+				}
 			}
 		});
 		btnRegister.setBounds(418, 541, 239, 45);

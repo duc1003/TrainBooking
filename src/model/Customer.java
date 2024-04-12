@@ -6,10 +6,10 @@ public class Customer implements Serializable{
     
     private static final long serialVersionUID = 1L;
 
-    private int cardID;
+    private String cardID;
     private String email;
     private String password;
-    private int phone;
+    private String phone;
     private String name;
     public String getName() {
         return name;
@@ -17,10 +17,10 @@ public class Customer implements Serializable{
     public void setName(String name) {
         this.name = name;
     }
-    public int getCardID() {
+    public String getCardID() {
         return cardID;
     }
-    public void setCardID(int cardID) {
+    public void setCardID(String cardID) {
         this.cardID = cardID;
     }
     public String getEmail() {
@@ -35,10 +35,10 @@ public class Customer implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 }

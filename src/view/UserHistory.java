@@ -7,30 +7,15 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Panel;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.Label;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import view.AdminLogin;
-import view.UserRegister;
-import view.UserProfile;
 import javax.swing.JScrollPane;
 import java.awt.Component;
-import javax.swing.table.TableModel;
-import javax.swing.border.LineBorder;
-import javax.swing.ScrollPaneConstants;
 
 public class UserHistory extends JFrame {
 
@@ -108,7 +93,8 @@ public class UserHistory extends JFrame {
 		menuProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				UserProfile.frame.setVisible(true);
+				UserProfile userProfile = new UserProfile();
+				userProfile.display();
 			}
 		});
 		menuProfile.setForeground(new Color(128, 0, 128));

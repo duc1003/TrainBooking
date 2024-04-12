@@ -33,10 +33,10 @@ public class CustomerServiceImpl extends UnicastRemoteObject implements Customer
             rs = stm.executeQuery(query);
             while (rs.next()) {
                 customer = new Customer();
-                customer.setCardID(rs.getInt(Schema.Customer.CARD_ID));
+                customer.setCardID(Schema.Customer.CARD_ID);
                 customer.setEmail(rs.getString(Schema.Customer.EMAIL));
                 customer.setPassword(rs.getString(Schema.Customer.PASSWORD));
-                customer.setPhone(rs.getInt(Schema.Customer.PHONE));
+                customer.setPhone(Schema.Customer.PHONE);
             }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -56,10 +56,10 @@ public class CustomerServiceImpl extends UnicastRemoteObject implements Customer
             rs = stm.executeQuery(query);
             while (rs.next()) {
                 Customer customer = new Customer();
-                customer.setCardID(rs.getInt(Schema.Customer.CARD_ID));
+                customer.setCardID(Schema.Customer.CARD_ID);
                 customer.setEmail(rs.getString(Schema.Customer.EMAIL));
                 customer.setPassword(rs.getString(Schema.Customer.PASSWORD));
-                customer.setPhone(rs.getInt(Schema.Customer.PHONE));
+                customer.setPhone(Schema.Customer.PHONE);
                 customers.add(customer);
             }
         } catch (SQLException e) {
@@ -74,10 +74,10 @@ public class CustomerServiceImpl extends UnicastRemoteObject implements Customer
     public Boolean updateCustomer(Customer customer) throws RemoteException {
         Statement stm = DBUtils.getStatement();
         String query = "UPDATE "+ Constant.CUSTOMER_TABLE +" SET " +
-                     "email = '" + customer.getEmail() + "', " +
-                     "password = '" + customer.getPassword() + "', " +
-                     "phone = " + customer.getPhone() + " " +
-                     "WHERE cardID = " + customer.getCardID();
+                     "name= '" + customer.getName() + "', " +
+                     "cardID= '" + customer.getCardID() + "', " +
+                     "phone= '" + customer.getPhone() + "' " +
+                     "WHERE email= '" + customer.getEmail() + "'";
         try {
             if (stm.executeUpdate(query) != 0) {
                 return true;
@@ -108,13 +108,13 @@ public class CustomerServiceImpl extends UnicastRemoteObject implements Customer
     @Override
     public Boolean registerCustomer(Customer customer) throws RemoteException {
         Statement stm = DBUtils.getStatement();
-        String query = "INSERT INTO "+ Constant.CUSTOMER_TABLE +" VALUES (" +
-                     customer.getCardID() + ", '" +
+        String query = "INSERT INTO "+ Constant.CUSTOMER_TABLE +" VALUES ('" +
+                     customer.getCardID() + "', '" +
                      customer.getEmail() + "', '" +
-                     customer.getPassword() + "', " +
-                     customer.getPhone() + "', " +
+                     customer.getPassword() + "', '" +
+                     customer.getPhone() + "', '" +
                      customer.getName() +
-                     ")";
+                     "')";
         try {
             if (stm.executeUpdate(query) != 0) {
                 return true;
@@ -137,10 +137,10 @@ public class CustomerServiceImpl extends UnicastRemoteObject implements Customer
             rs = stm.executeQuery(query);
             while (rs.next()) {
                 customer = new Customer();
-                customer.setCardID(rs.getInt(Schema.Customer.CARD_ID));
+                customer.setCardID(rs.getString(Schema.Customer.CARD_ID));
                 customer.setEmail(rs.getString(Schema.Customer.EMAIL));
                 customer.setPassword(rs.getString(Schema.Customer.PASSWORD));
-                customer.setPhone(rs.getInt(Schema.Customer.PHONE));
+                customer.setPhone(rs.getString(Schema.Customer.PHONE));
                 customer.setName(rs.getString(Schema.Customer.NAME));
             }
         } catch (SQLException e) {
@@ -149,6 +149,23 @@ public class CustomerServiceImpl extends UnicastRemoteObject implements Customer
         }
 
         return customer;
+    }
+
+    @Override
+    public Boolean changePassword(Customer customer) throws RemoteException {
+        Statement stm = DBUtils.getStatement();
+        String query = "UPDATE "+ Constant.CUSTOMER_TABLE +" SET " +
+                     "password= '" + customer.getPassword() + "' " +
+                     "WHERE email= '" + customer.getEmail() + "'";
+        try {
+            if (stm.executeUpdate(query) != 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return false;
     }
     // public static void main(String[] args) {
     //     Customer customer = null;

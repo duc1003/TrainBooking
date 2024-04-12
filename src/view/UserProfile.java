@@ -9,39 +9,27 @@ import javax.swing.border.EmptyBorder;
 import model.Customer;
 import utils.UserUtils;
 
-import java.awt.Button;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Panel;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JSeparator;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.Label;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import view.AdminLogin;
-import view.UserRegister;
 import javax.swing.UIManager;
-import view.UserProfileEdit;
 
 public class UserProfile extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	public static UserProfile frame = new UserProfile();
-	private static Customer currentCustomer;
+	public static UserProfile frame;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public void display() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					frame = new UserProfile();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -55,7 +43,7 @@ public class UserProfile extends JFrame {
 	 * Create the frame.
 	 */
 	public UserProfile() {
-		currentCustomer = UserUtils.getCurrentCustomer();
+		Customer currentCustomer = UserUtils.getCurrentCustomer();
 		if (currentCustomer != null) {
 			System.out.println("getCurrentCustomer is successful");
 		} else System.out.println("getCurrentCustomer is failed");
@@ -164,7 +152,7 @@ public class UserProfile extends JFrame {
 		btnPasswordL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				UserChangePassword.frame.setVisible(true);
+				UserChangePassword.display();
 			}
 		});
 		btnPasswordL.setForeground(Color.RED);

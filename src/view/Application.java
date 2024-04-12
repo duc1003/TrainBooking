@@ -2,6 +2,7 @@ package view;
 
 import java.rmi.RemoteException;
 
+
 public class Application extends Thread {
 
     public void run() {

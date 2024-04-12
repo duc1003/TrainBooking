@@ -5,24 +5,19 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.Button;
+
+import controller.client;
+import model.Customer;
+import utils.UserUtils;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Panel;
 import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.BorderLayout;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
 import javax.swing.JLabel;
 import javax.swing.JButton;
-import java.awt.Label;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import view.AdminLogin;
-import view.UserRegister;
-import javax.swing.UIManager;
 
 public class UserProfileEdit extends JFrame {
 
@@ -53,6 +48,7 @@ public class UserProfileEdit extends JFrame {
 	 * Create the frame.
 	 */
 	public UserProfileEdit() {
+		Customer customer = UserUtils.getCurrentCustomer();
 		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 985, 522);
@@ -190,6 +186,8 @@ public class UserProfileEdit extends JFrame {
 		fieldEmail = new JTextField();
 		fieldEmail.setColumns(10);
 		fieldEmail.setBounds(539, 197, 395, 35);
+		fieldEmail.setText(customer.getEmail());
+		fieldEmail.setEnabled(false);
 		contentPane.add(fieldEmail);
 		
 		JSeparator separator = new JSeparator();
@@ -199,6 +197,7 @@ public class UserProfileEdit extends JFrame {
 		fieldName = new JTextField();
 		fieldName.setColumns(10);
 		fieldName.setBounds(539, 256, 395, 35);
+		fieldName.setText(customer.getName());
 		contentPane.add(fieldName);
 		
 		JSeparator separator_1 = new JSeparator();
@@ -208,6 +207,7 @@ public class UserProfileEdit extends JFrame {
 		fieldPhone = new JTextField();
 		fieldPhone.setColumns(10);
 		fieldPhone.setBounds(539, 317, 395, 35);
+		fieldPhone.setText(customer.getPhone());
 		contentPane.add(fieldPhone);
 		
 		JSeparator separator_2 = new JSeparator();
@@ -217,6 +217,7 @@ public class UserProfileEdit extends JFrame {
 		fieldCardID = new JTextField();
 		fieldCardID.setColumns(10);
 		fieldCardID.setBounds(539, 384, 395, 35);
+		fieldCardID.setText(customer.getCardID());
 		contentPane.add(fieldCardID);
 		
 		JSeparator separator_3 = new JSeparator();
@@ -227,5 +228,26 @@ public class UserProfileEdit extends JFrame {
 		btnUpdate.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		btnUpdate.setBounds(691, 430, 110, 45);
 		contentPane.add(btnUpdate);
+		btnUpdate.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Customer updateCustomer = new Customer();
+				updateCustomer.setPassword(customer.getPassword());
+				updateCustomer.setCardID(fieldCardID.getText());
+				updateCustomer.setEmail(customer.getEmail());
+				updateCustomer.setPhone(fieldPhone.getText());
+				updateCustomer.setName(fieldName.getText());
+				boolean success = client.userUpdate(updateCustomer);
+				if (success) {
+					UserUtils.setCurrentCustomer(updateCustomer);
+					UserHome.display();
+					frame.setVisible(false);
+				} else {
+					btnUpdate.setBackground(new Color(9,9,9));
+				}
+			}
+			
+		});
 	}
 }
