@@ -7,6 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import constant.Constant;
+
 import java.awt.Component;
 import java.awt.Color;
 import javax.swing.JButton;
@@ -103,7 +106,7 @@ public class Background extends JFrame {
 		JLabel lblbackground = new JLabel();
 		lblbackground.setBounds(10, 128, 584, 444);
 		panel.add(lblbackground);
-		lblbackground.setIcon(new ImageIcon("D:\\Phan tan\\TESTPROJECT\\TrainBooking\\src\\bg1.png"));
+		lblbackground.setIcon(new ImageIcon(Constant.PATH_BG1));
 		
 		JLabel titleLogin = new JLabel("Đăng nhập");
 		titleLogin.setForeground(new Color(34, 139, 34));

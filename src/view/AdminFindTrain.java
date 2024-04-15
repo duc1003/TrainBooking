@@ -127,7 +127,7 @@ public class AdminFindTrain extends JFrame {
         
         JLabel lblfromStation = new JLabel("Ga đi:");
         lblfromStation.setFont(new Font("Tahoma", Font.BOLD, 16));
-        lblfromStation.setBounds(250, 253, 86, 35);
+        lblfromStation.setBounds(250, 251, 86, 35);
         contentPane.add(lblfromStation);
         
         JLabel lbltoStation = new JLabel("Ga đến:");
