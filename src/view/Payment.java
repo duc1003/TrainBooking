@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 
-import controller.client;
+import constant.Constant;
 import model.History;
 import utils.UserUtils;
 
@@ -52,7 +52,7 @@ public class Payment extends JFrame {
 	 * Create the frame.
 	 */
 	public Payment() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 644, 571);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
@@ -68,11 +68,11 @@ public class Payment extends JFrame {
 		
 		JLabel imgVisa = new JLabel("");
 		imgVisa.setBounds(10, 11, 128, 88);
-		imgVisa.setIcon(new ImageIcon("/src/assets/img/visa.png"));
+		imgVisa.setIcon(new ImageIcon(Constant.PATH_BG_VISA));
 		panel.add(imgVisa);
 		
 		JLabel imgMasterCard = new JLabel("");
-		imgMasterCard.setIcon(new ImageIcon("/src/assets/img/mastercard.png"));
+		imgMasterCard.setIcon(new ImageIcon(Constant.PATH_BG_MASTERCARD));
 		imgMasterCard.setBounds(184, 11, 128, 88);
 		panel.add(imgMasterCard);
 		

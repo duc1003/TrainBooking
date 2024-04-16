@@ -25,7 +25,7 @@ public class UserProfile extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public void display() {
+	public static void display() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {

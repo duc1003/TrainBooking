@@ -24,17 +24,26 @@ import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JSeparator;
-
+import java.awt.EventQueue;
 /**
  *
  * @author raven
  */
 public class UserFindTrain extends JFrame {
 
-    /**
-     * Creates new form Main
-     */
     static UserFindTrain frame = new UserFindTrain();
+    public static void display() {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    frame = new UserFindTrain();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
     public UserFindTrain() {
         initComponents();
@@ -222,49 +231,6 @@ public class UserFindTrain extends JFrame {
         dateChooser.showPopup();
     }// GEN-LAST:event_jButton5ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
-        // (optional) ">
-        /*
-         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
-         * look and feel.
-         * For details see
-         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(UserFindTrain.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(UserFindTrain.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(UserFindTrain.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(UserFindTrain.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        }
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                frame.setVisible(true);
-            }
-        });
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.raven.datechooser.DateChooser dateChooser;
     private javax.swing.JButton btnDate;
     private javax.swing.JTextField fieldDate;

@@ -9,4 +9,6 @@ public class Constant {
     public static final String HISTORY_TABLE = "history";
     public static final String CUSTOMER_TABLE = "customer";
     public static final String PATH_BG1 = "src/assets/img/bg1.png";
+    public static final String PATH_BG_VISA = "src/assets/img/visa.png";
+    public static final String PATH_BG_MASTERCARD = "src/assets/img/mastercard.png";
 }

@@ -10,7 +10,6 @@ import view.raven.cell.TableActionEvent;
 
 import javax.swing.table.DefaultTableModel;
 
-import controller.client;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -19,7 +18,6 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.GroupLayout;
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JTable;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -141,7 +139,7 @@ public class UserChooseTrain extends javax.swing.JFrame {
         menuHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				AdminHome.frame.setVisible(true);
+				UserHome.display();
 			}
 		});
         
@@ -153,7 +151,7 @@ public class UserChooseTrain extends javax.swing.JFrame {
         menuFind.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				UserFindTrain.frame.setVisible(true);
+				UserFindTrain.display();
 			}
 		});
         
@@ -165,7 +163,7 @@ public class UserChooseTrain extends javax.swing.JFrame {
         menuProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			frame.setVisible(false);
-			UserProfile.frame.setVisible(true);
+			UserProfile.display();
 			}
 		});
         

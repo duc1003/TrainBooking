@@ -38,7 +38,7 @@ public class PanelActionView extends javax.swing.JPanel {
 
         cmdView = new view.raven.cell.ActionButton();
 
-        cmdView.setIcon(new ImageIcon("D:\\Phan tan\\TESTPROJECT\\TrainBooking\\src\\view\\raven\\cell\\view.png")); // NOI18N
+        cmdView.setIcon(new ImageIcon("src/view/raven/cell/view.png")); // NOI18N
         cmdView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdEditActionPerformed(evt);
