@@ -155,7 +155,7 @@ public class UserProfileEdit extends JFrame {
 		btnPasswordL.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				UserChangePassword.frame.setVisible(true);
+				UserChangePassword.display();
 			}
 		});
 		btnPasswordL.setForeground(Color.RED);

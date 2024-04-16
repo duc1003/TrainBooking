@@ -5,6 +5,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import controller.client;
+import model.Train;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -199,5 +203,23 @@ public class AdminAddTrain extends JFrame {
 		btnAdd.setFont(new Font("Tahoma", Font.PLAIN, 24));
 		btnAdd.setBounds(399, 563, 239, 45);
 		contentPane.add(btnAdd);
+		btnAdd.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Train train = new Train();
+				train.setTrainID(Integer.parseInt(fieldtrainID.getText()));
+				train.setTrainName(fieldtrainName.getText());
+				train.setFromStation(fieldfromStation.getText());
+				train.setToStation(fieldtoStation.getText());
+				train.setSeats(Integer.parseInt(fieldSeats.getText()));
+				train.setPrice(Double.parseDouble(fieldPrice.getText()));
+				if (client.addTrain(train)) {
+					AdminHome.display();
+					frame.setVisible(false);
+				}
+			}
+			
+		});
 	}
 }

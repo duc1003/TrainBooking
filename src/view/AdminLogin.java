@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import constant.Constant;
+import controller.client;
+import model.Admin;
+import utils.AdminUtils;
 
 import java.awt.Component;
 import java.awt.Color;
@@ -149,7 +152,13 @@ public class AdminLogin extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				Admin admin = null;
+				admin = client.adminLogin(fieldEmail.getText(), new String(passwordField.getPassword()));
+				if (admin != null) {
+					AdminUtils.setCurrentAdmin(admin);
+					AdminHome.display();
+					frame.setVisible(false);
+				}
 			}
 			
 		});

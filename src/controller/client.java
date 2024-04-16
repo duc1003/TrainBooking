@@ -6,8 +6,10 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 import constant.Constant;
+import model.Admin;
 import model.Customer;
 import model.Train;
+import service.AdminService;
 import service.CustomerService;
 import service.TrainService;
 
@@ -75,5 +77,30 @@ public class client {
 			e.printStackTrace();
 		}
 		return trains;
+	}
+	
+	public static Admin adminLogin(String username, String password) {
+		Admin admin = null;
+		try {
+			Registry registry = LocateRegistry.getRegistry("localhost", 3333);
+			AdminService adminService = (AdminService) registry.lookup(Constant.ADMIN_TABLE);
+			admin = adminService.login(username, password);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return admin;
+	}
+	public static boolean addTrain(Train train){
+		boolean status = false;
+		try {
+			Registry registry = LocateRegistry.getRegistry("localhost", 3333);
+			TrainService trainService = (TrainService) registry.lookup(Constant.TRAIN_TABLE);
+			status = trainService.addTrain(train);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return status;
 	}
 }
