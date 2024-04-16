@@ -10,7 +10,7 @@ import constant.Constant;
 public class DBUtils {
     public static Connection getConnection() {
         Connection conn = null;
-        String url = "jdbc:mysql://localhost:3306/" + Constant.DB_NAME;
+        String url = "jdbc:mysql://localhost:3390/" + Constant.DB_NAME;
         try {
             conn = DriverManager.getConnection(url, Constant.USERNAME, Constant.PASSWORD);
         } catch (SQLException e) {
@@ -41,24 +41,24 @@ public class DBUtils {
 		}
 		return st;
 	}
-    // public static void main(String[] args) {
-    //     Connection conn = null;
+     public static void main(String[] args) {
+         Connection conn = null;
 
-    //     conn = getConnection();
-    //     if (conn != null) {
-    //         System.out.println("connection successfully");
-    //     } else System.out.println("connection fails");
-    //     Statement stm = null;
-    //     try {
-    //         stm = conn.createStatement();
-    //     } catch (SQLException e) {
-    //         // TODO Auto-generated catch block
-    //         e.printStackTrace();
-    //     }
-    //     if (stm != null) {
-    //         System.out.println("createStatement successfully");
-    //     } else {
-    //         System.out.println("createStatement fails");
-    //     }
-    // }
+         conn = getConnection();
+         if (conn != null) {
+             System.out.println("connection successfully");
+         } else System.out.println("connection fails");
+         Statement stm = null;
+         try {
+             stm = conn.createStatement();
+         } catch (SQLException e) {
+             // TODO Auto-generated catch block
+             e.printStackTrace();
+         }
+         if (stm != null) {
+            System.out.println("createStatement successfully");
+         } else {
+             System.out.println("createStatement fails");
+        }
+     }
 }
