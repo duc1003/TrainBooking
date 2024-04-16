@@ -6,10 +6,12 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 import constant.Constant;
+import model.History;
 import model.Admin;
 import model.Customer;
 import model.Train;
 import service.AdminService;
+import service.BookingService;
 import service.CustomerService;
 import service.TrainService;
 
@@ -102,5 +104,32 @@ public class client {
 			e.printStackTrace();
 		}
 		return status;
+	}
+
+	public static List<Train> findTrains(String fromStation, String toStation, String date){
+		List<Train> trains = new ArrayList<Train>();
+		try {
+			Registry registry = LocateRegistry.getRegistry("localhost", 3333);
+			TrainService trainService = (TrainService) registry.lookup(Constant.TRAIN_TABLE);
+			trains = trainService.getTrainsBetweenStations(fromStation, toStation);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return trains;
+	}
+
+	public static boolean createHistory(History history){
+		try {
+			Registry registry = LocateRegistry.getRegistry("localhost", 3333);
+			BookingService bookingService = (BookingService) registry.lookup(Constant.HISTORY_TABLE);
+			if (bookingService.createHistory(history)) {
+				return true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return false;
 	}
 }

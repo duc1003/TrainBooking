@@ -23,4 +23,12 @@ public class Schema {
         public static final String PRICE = "price";
         public static final String DATE = "date";
     }
+
+    public static final class History {
+        public static final String SEAT = "seat";
+        public static final String TRANSPORT_ID = "transportID";
+        public static final String CARD_ID = "cardID";
+        public static final String TRAIN_ID = "trainID";
+        
+    }
 }

@@ -15,6 +15,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 
+import controller.client;
+import model.History;
+import utils.UserUtils;
+
 public class Payment extends JFrame {
 
 	private static final long serialVersionUID = 1L;
@@ -23,15 +27,19 @@ public class Payment extends JFrame {
 	private JTextField fieldEDate;
 	private JTextField fieldCVCode;
 	private JTextField fieldCardOwner;
+	public static Payment frame;
+	public static int trainId = 0;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void display(int trainID) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Payment frame = new Payment();
+					trainId = trainID;
+					System.out.println(trainID + "");
+					frame = new Payment();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -60,11 +68,11 @@ public class Payment extends JFrame {
 		
 		JLabel imgVisa = new JLabel("");
 		imgVisa.setBounds(10, 11, 128, 88);
-		imgVisa.setIcon(new ImageIcon("D:\\Phan tan\\TESTPROJECT\\TrainBooking\\src\\assets\\img\\visa.png"));
+		imgVisa.setIcon(new ImageIcon("/src/assets/img/visa.png"));
 		panel.add(imgVisa);
 		
 		JLabel imgMasterCard = new JLabel("");
-		imgMasterCard.setIcon(new ImageIcon("D:\\Phan tan\\TESTPROJECT\\TrainBooking\\src\\assets\\img\\mastercard.png"));
+		imgMasterCard.setIcon(new ImageIcon("/src/assets/img/mastercard.png"));
 		imgMasterCard.setBounds(184, 11, 128, 88);
 		panel.add(imgMasterCard);
 		
@@ -127,5 +135,22 @@ public class Payment extends JFrame {
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBounds(22, 465, 593, 58);
 		contentPane.add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String cardID = UserUtils.getCurrentCustomer().getCardID();
+				History history = new History();
+				history.setTransportID("EE-AAAAAA");
+				history.setCardID(cardID);
+				history.setTrainID(trainId);
+				history.setSeat(10);
+				if (controller.client.createHistory(history)) {
+					UserHome.display();
+					frame.setVisible(true);
+				}
+			}
+			
+		});
 	}
 }

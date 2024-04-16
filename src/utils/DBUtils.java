@@ -10,7 +10,7 @@ import constant.Constant;
 public class DBUtils {
     public static Connection getConnection() {
         Connection conn = null;
-        String url = "jdbc:mysql://localhost:3390/" + Constant.DB_NAME;
+        String url = "jdbc:mysql://localhost:3306/" + Constant.DB_NAME;
         try {
             conn = DriverManager.getConnection(url, Constant.USERNAME, Constant.PASSWORD);
         } catch (SQLException e) {

@@ -26,7 +26,7 @@ public class BookingServiceImpl extends UnicastRemoteObject implements BookingSe
     }
 
     @Override
-    public History createHistory(History bookingDetails) throws RemoteException {
+    public boolean createHistory(History bookingDetails) throws RemoteException {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'createHistory'");
     }

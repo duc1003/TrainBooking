@@ -11,6 +11,6 @@ public interface BookingService extends Remote{
 
 	public List<History> getAllBookingsByCustomerId(int cardID) throws RemoteException;
 
-	public History createHistory(History bookingDetails) throws RemoteException;
+	public boolean createHistory(History bookingDetails) throws RemoteException;
 
 }

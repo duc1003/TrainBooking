@@ -7,7 +7,7 @@ public class History implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String transportID;
-    private int cardID;
+    private String cardID;
     private int trainID;
     private int seat;
     public String getTransportID() {
@@ -16,10 +16,10 @@ public class History implements Serializable {
     public void setTransportID(String transportID) {
         this.transportID = transportID;
     }
-    public int getCardID() {
+    public String getCardID() {
         return cardID;
     }
-    public void setCardID(int cardID) {
+    public void setCardID(String cardID) {
         this.cardID = cardID;
     }
     public int getTrainID() {
