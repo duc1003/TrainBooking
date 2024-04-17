@@ -23,7 +23,7 @@ public class GUI {
     }
 
     private void init() {
-        UserLogin.frame.setVisible(true);
+        UserLogin.display();
     }
 }
 

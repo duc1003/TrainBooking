@@ -17,9 +17,7 @@ public class UserHome extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private static UserHome frame = new UserHome();
-	/**
-	 * Launch the application.
-	 */
+
 	public static void display() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -32,34 +30,26 @@ public class UserHome extends JFrame {
 		});
 	}
 
-	
-	/**
-	 * Create the frame.
-	 */
 	public UserHome() {
-		setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1099, 492);
 		contentPane = new JPanel();
-		contentPane.setForeground(new Color(34, 139, 34));
-		contentPane.setBackground(new Color(102, 205, 170));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
-		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+		setContentPane(contentPane);
+
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(250, 250, 210));
+		panel.setBackground(new Color(173, 216, 230));
 		panel.setBounds(0, 0, 1096, 116);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		
+
 		JButton menuHome = new JButton("Trang chủ");
 		menuHome.setForeground(new Color(128, 0, 128));
 		menuHome.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		menuHome.setBounds(21, 42, 120, 41);
 		panel.add(menuHome);
-		
+
 		JButton menuFind = new JButton("Tìm tàu");
 		menuFind.setForeground(new Color(128, 0, 128));
 		menuFind.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -71,20 +61,20 @@ public class UserHome extends JFrame {
 				UserFindTrain.frame.setVisible(true);
 			}
 		});
-		
+
 		JButton menuHistory = new JButton("Lịch sử mua vé");
 		menuHistory.setForeground(new Color(128, 0, 128));
 		menuHistory.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		menuHistory.setBounds(420, 42, 174, 41);
 		panel.add(menuHistory);
-		
+
 		menuHistory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
 				UserHistory.frame.setVisible(true);
 			}
 		});
-		
+
 		JButton menuProfile = new JButton("Tài khoản");
 		menuProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -97,7 +87,7 @@ public class UserHome extends JFrame {
 		menuProfile.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		menuProfile.setBounds(650, 42, 174, 41);
 		panel.add(menuProfile);
-		
+
 		JButton menuLogout = new JButton("Đăng xuất");
 		menuLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -105,32 +95,32 @@ public class UserHome extends JFrame {
 				UserLogin.frame.setVisible(true);
 			}
 		});
-		
+
 		menuLogout.setForeground(new Color(128, 0, 128));
 		menuLogout.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		menuLogout.setBounds(882, 42, 174, 41);
 		panel.add(menuLogout);
-		
+
 		JLabel titleHome = new JLabel("Trang chủ mua vé tàu");
-		titleHome.setForeground(new Color(34, 139, 34));
-		titleHome.setBackground(new Color(127, 255, 0));
+		titleHome.setForeground(new Color(0, 100, 0));
 		titleHome.setFont(new Font("Tahoma", Font.BOLD, 24));
 		titleHome.setBounds(387, 128, 285, 35);
 		contentPane.add(titleHome);
-		
+
 		JLabel lblContactName = new JLabel("Liên Hệ: đức và duy");
-		lblContactName.setForeground(new Color(255, 255, 0));
+		lblContactName.setForeground(new Color(70, 130, 180)); // Navy Blue
 		lblContactName.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblContactName.setBounds(30, 401, 183, 22);
+		lblContactName.setBounds(30, 401, 250, 22); // Adjusted width for better visibility
 		contentPane.add(lblContactName);
-		
+
 		JLabel lblContactPhone = new JLabel("SĐT: 0123456789");
-		lblContactPhone.setForeground(new Color(0, 0, 0));
+		lblContactPhone.setForeground(new Color(70, 130, 180)); // Navy Blue
 		lblContactPhone.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblContactPhone.setBounds(30, 422, 183, 22);
+		lblContactPhone.setBounds(30, 431, 183, 22); // Adjusted position
 		contentPane.add(lblContactPhone);
-		
-		JLabel titleHome2 = new JLabel("Chào mừng bạn đến với ứng dụng đặt vé tàu chúng tôi chúc bạn một ngày mới vui vẻ\r\n");
+
+		JLabel titleHome2 = new JLabel(
+				"Chào mừng bạn đến với ứng dụng đặt vé tàu chúng tôi chúc bạn một ngày mới vui vẻ");
 		titleHome2.setForeground(new Color(165, 42, 42));
 		titleHome2.setFont(new Font("Tahoma", Font.BOLD, 20));
 		titleHome2.setBounds(98, 189, 867, 55);

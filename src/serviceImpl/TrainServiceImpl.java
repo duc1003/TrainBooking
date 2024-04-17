@@ -12,7 +12,9 @@ import constant.Constant;
 import constant.Schema;
 import model.Train;
 import service.TrainService;
+import utils.AppUtils;
 import utils.DBUtils;
+
 
 public class TrainServiceImpl extends UnicastRemoteObject implements TrainService {
 
@@ -33,7 +35,7 @@ public class TrainServiceImpl extends UnicastRemoteObject implements TrainServic
                  train.getToStation() + "', " +
                  train.getSeats() + ", " +
                  train.getPrice() + ", '" +
-                 train.getDate() + "')";
+                 AppUtils.convertDateFormat(train.getDate()) + "')";
         try {
             if (stm.executeUpdate(query) != 0) {
                 return true;
@@ -141,7 +143,8 @@ public class TrainServiceImpl extends UnicastRemoteObject implements TrainServic
     @Override
     public List<Train> getTrainsBetweenStations(String fromStation, String toStation) throws RemoteException {
         List<Train> trains = new ArrayList<Train>();
-        String query = "SELECT * FROM " + Constant.TRAIN_TABLE + " WHERE fromStation = '"+ fromStation +"' AND toStation = '"+ toStation + "'";
+        String query = "SELECT * FROM " + Constant.TRAIN_TABLE + " WHERE fromStation like '%"+ fromStation +"%' AND toStation like '%"+ toStation + "%'";
+        System.out.println(query);
         Statement stm = DBUtils.getStatement();
         ResultSet rs;
         try {

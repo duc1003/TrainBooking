@@ -47,14 +47,14 @@ public class PanelAction extends javax.swing.JPanel {
         cmdEdit = new view.raven.cell.ActionButton();
         cmdDelete = new view.raven.cell.ActionButton();
 
-        cmdEdit.setIcon(new ImageIcon("D:\\Phan tan\\TESTPROJECT\\TrainBooking\\src\\view\\raven\\cell\\edit.png")); // NOI18N
+        cmdEdit.setIcon(new ImageIcon("src/view/raven/cell/edit.png")); // NOI18N
         cmdEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdEditActionPerformed(evt);
             }
         });
 
-        cmdDelete.setIcon(new ImageIcon("D:\\Phan tan\\TESTPROJECT\\TrainBooking\\src\\view\\raven\\cell\\delete.png")); // NOI18N
+        cmdDelete.setIcon(new ImageIcon("src/view/raven/cell/delete.png")); // NOI18N
         cmdDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdDeleteActionPerformed(evt);

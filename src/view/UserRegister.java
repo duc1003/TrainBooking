@@ -29,16 +29,17 @@ public class UserRegister extends JFrame {
 	private JTextField fieldName;
 	private JTextField fieldPhone;
 	private JTextField fieldCardID;
-	static UserRegister frame = new UserRegister();
+	static UserRegister frame;
 
 	/**
 	 * Launch the application.
 	 */
 	
-	public static void main(String[] args) {
+	public static void display() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					frame = new UserRegister();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -92,7 +93,7 @@ public class UserRegister extends JFrame {
 		menuAdminLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.setVisible(false);
-				AdminLogin.frame.setVisible(true);
+				AdminLogin.display();
 			}
 		});
 		menuAdminLogin.setForeground(new Color(128, 0, 128));

@@ -26,10 +26,11 @@ public class UserHistory extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	public static void display() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					frame = new UserHistory();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
