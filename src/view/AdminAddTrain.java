@@ -62,7 +62,7 @@ public class AdminAddTrain extends JFrame {
         contentPane.setLayout(null);
         contentPane.setForeground(new Color(34, 139, 34));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        contentPane.setBackground(new Color(102, 205, 170));
+        contentPane.setBackground(new Color(173, 216, 230));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         layout.setHorizontalGroup(

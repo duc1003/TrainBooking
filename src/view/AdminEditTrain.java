@@ -34,7 +34,7 @@ public class AdminEditTrain extends JFrame {
 	static AdminEditTrain frame = new AdminEditTrain();
     public AdminEditTrain() {
         initComponents();
-        getContentPane().setBackground(new Color(240, 240, 240));
+        getContentPane().setBackground(new Color(173, 216, 230));
         dateChooser.addEventDateChooser(new EventDateChooser() {
             @Override
             public void dateSelected(SelectedAction action, SelectedDate date) {
@@ -62,7 +62,7 @@ public class AdminEditTrain extends JFrame {
         contentPane.setLayout(null);
         contentPane.setForeground(new Color(34, 139, 34));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-        contentPane.setBackground(new Color(102, 205, 170));
+        contentPane.setBackground(new Color(173, 216, 230));
         
         JPanel panel = new JPanel();
         panel.setLayout(null);

@@ -49,7 +49,7 @@ public class UserHistory extends JFrame {
 		setBounds(100, 100, 1099, 561);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(34, 139, 34));
-		contentPane.setBackground(new Color(102, 205, 170));
+		contentPane.setBackground(new Color(173, 216, 230));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
