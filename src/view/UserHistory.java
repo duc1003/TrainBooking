@@ -7,7 +7,12 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
+import model.History;
+import utils.UserUtils;
+
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.Font;
@@ -32,6 +37,17 @@ public class UserHistory extends JFrame {
 				try {
 					frame = new UserHistory();
 					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	public static void close(){
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frame.setVisible(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -67,7 +83,7 @@ public class UserHistory extends JFrame {
 		panel.add(menuHome);
 		menuHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
+				close();
 				UserHome.display();
 			}
 		});
@@ -79,8 +95,8 @@ public class UserHistory extends JFrame {
 		panel.add(menuFind);
 		menuFind.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				UserFindTrain.frame.setVisible(true);
+				close();
+				UserFindTrain.display();
 			}
 		});
 		
@@ -93,9 +109,8 @@ public class UserHistory extends JFrame {
 		JButton menuProfile = new JButton("Tài khoản");
 		menuProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				UserProfile userProfile = new UserProfile();
-				userProfile.display();
+				close();
+				UserProfile.display();
 			}
 		});
 		menuProfile.setForeground(new Color(128, 0, 128));
@@ -106,8 +121,8 @@ public class UserHistory extends JFrame {
 		JButton menuLogout = new JButton("Đăng xuất");
 		menuLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				UserLogin.frame.setVisible(true);
+				close();
+				UserLogin.display();
 			}
 		});
 		
@@ -149,6 +164,31 @@ public class UserHistory extends JFrame {
         		"TransportID", "TrainID", "Ga đi", "Ga đến", "Ngày đi", "Ghế ngồi", "Giá"
         	}
         ));
+		List<History> histories = new ArrayList<History>();
+		histories = controller.client.getAllHistories(UserUtils.getCurrentCustomer().getCardID());
+		if (histories != null && !histories.isEmpty()) {
+			// Xóa dữ liệu hiện tại của bảng
+			DefaultTableModel model = (DefaultTableModel) TableHistory.getModel();
+			model.setRowCount(0);
+		
+			// Điền dữ liệu từ listTrain vào bảng
+			for (History history : histories) {
+				model.addRow(new Object[]{
+					history.getTransportID(),
+					history.getTrainID(),
+					history.getFromStation(),
+					history.getToStation(),
+					history.getDate(),
+					history.getSeat(),
+					history.getPrice()
+				});
+			}
+		} else {
+			// Xóa dữ liệu hiện tại của bảng nếu listTrain rỗng
+			DefaultTableModel model = (DefaultTableModel) TableHistory.getModel();
+			model.setRowCount(0);
+		}
+
         scrollPane.setViewportView(TableHistory);
         TableHistory.setForeground(Color.DARK_GRAY);
         TableHistory.setFont(new Font("Tahoma", Font.PLAIN, 16));

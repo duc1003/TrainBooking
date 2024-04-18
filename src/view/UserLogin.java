@@ -70,16 +70,11 @@ public class UserLogin extends JFrame {
         btnLogin.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Customer customer = client.userLogin(fieldEmail.getText(), new String(passwordField.getPassword()));
-                if (customer != null) {
-                    UserUtils.setCurrentCustomer(customer);
-                    UserHome.display();
-                    dispose();
-                } else {
-                    JOptionPane.showMessageDialog(null, "Tên đăng nhập hoặc mật khẩu không đúng", "Lỗi đăng nhập", JOptionPane.ERROR_MESSAGE);
-                }
+                login();
             }
         });
+
+        passwordField.addActionListener(v -> login());
 
         // Navigation buttons
         JButton btnUserRegister = new JButton("Đăng ký");
@@ -89,8 +84,7 @@ public class UserLogin extends JFrame {
         btnUserRegister.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                UserRegister userRegister = new UserRegister();
-                userRegister.setVisible(true);
+                UserRegister.display();
             }
         });
 
@@ -101,10 +95,21 @@ public class UserLogin extends JFrame {
         btnAdminLogin.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                AdminLogin adminLogin = new AdminLogin();
-                adminLogin.setVisible(true);
+                AdminLogin.display();
             }
         });
+    }
+
+    private void login() {
+        Customer customer = client.userLogin(fieldEmail.getText(), new String(passwordField.getPassword()));
+        if (customer != null) {
+            UserUtils.setCurrentCustomer(customer);
+            UserHome.display();
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Tên đăng nhập hoặc mật khẩu không đúng", "Lỗi đăng nhập",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public static void display() {

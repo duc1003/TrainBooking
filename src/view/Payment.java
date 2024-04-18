@@ -9,14 +9,17 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Font;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.util.Random;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 
 import constant.Constant;
 import model.History;
+import utils.AppUtils;
 import utils.UserUtils;
 
 public class Payment extends JFrame {
@@ -41,6 +44,18 @@ public class Payment extends JFrame {
 					System.out.println(trainID + "");
 					frame = new Payment();
 					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public static void close(){
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frame.setVisible(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -141,13 +156,18 @@ public class Payment extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String cardID = UserUtils.getCurrentCustomer().getCardID();
 				History history = new History();
-				history.setTransportID("EE-AAAAAA");
+				String code;
+				do {
+					code = AppUtils.generateCode();
+				} while (controller.client.checkHistoryCode(code));
+				history.setTransportID(code);
 				history.setCardID(cardID);
 				history.setTrainID(trainId);
-				history.setSeat(10);
+				history.setSeat(new Random().nextInt(100) + 1);
 				if (controller.client.createHistory(history)) {
 					UserHome.display();
-					frame.setVisible(true);
+					UserChooseTrain.close();
+					close();
 				}
 			}
 			

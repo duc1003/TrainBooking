@@ -138,7 +138,7 @@ public class UserChooseTrain extends javax.swing.JFrame {
         panel.add(menuHome);
         menuHome.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
+				close();
 				UserHome.display();
 			}
 		});
@@ -150,7 +150,7 @@ public class UserChooseTrain extends javax.swing.JFrame {
         panel.add(menuFind);
         menuFind.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
+				close();
 				UserFindTrain.display();
 			}
 		});
@@ -162,7 +162,7 @@ public class UserChooseTrain extends javax.swing.JFrame {
         panel.add(menuProfile);
         menuProfile.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			frame.setVisible(false);
+			close();
 			UserProfile.display();
 			}
 		});
@@ -174,8 +174,8 @@ public class UserChooseTrain extends javax.swing.JFrame {
         panel.add(menuLogout);
         menuLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			frame.setVisible(false);
-			view.UserLogin.frame.setVisible(true);
+			close();
+			UserLogin.display();
 			}
 		});
         
@@ -216,8 +216,8 @@ public class UserChooseTrain extends javax.swing.JFrame {
         panel.add(menuHistory);
         menuHistory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			frame.setVisible(false);
-			UserHistory.frame.setVisible(true);
+			close();
+			UserHistory.display();
 			}
 		});
         
@@ -235,6 +235,17 @@ public class UserChooseTrain extends javax.swing.JFrame {
 					trains = trainsS;
 					frame = new UserChooseTrain();
 					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	public static void close(){
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					frame.setVisible(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

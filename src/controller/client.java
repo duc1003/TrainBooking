@@ -132,4 +132,33 @@ public class client {
 		}
 		return false;
 	}
+
+	public static boolean checkHistoryCode(String code){
+		try {
+			Registry registry = LocateRegistry.getRegistry("localhost", 3333);
+			BookingService bookingService = (BookingService) registry.lookup(Constant.HISTORY_TABLE);
+			List<String> codes = bookingService.getAllHistoryCodes();
+			for (String _code : codes){
+				if (code.equals(_code)) return true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	public static List<History> getAllHistories(String cardID){
+		List<History> histories = new ArrayList<History>();
+		try {
+			Registry registry = LocateRegistry.getRegistry("localhost", 3333);
+			BookingService bookingService = (BookingService) registry.lookup(Constant.HISTORY_TABLE);
+			histories = bookingService.getAllBookingsByCustomerId(cardID);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return histories;
+	}
+	
 }
