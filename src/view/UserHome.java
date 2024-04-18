@@ -35,11 +35,12 @@ public class UserHome extends JFrame {
 		setBounds(100, 100, 1099, 492);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(173, 216, 230));
+		panel.setBackground(new Color(250, 250, 210));
 		panel.setBounds(0, 0, 1096, 116);
 		contentPane.add(panel);
 		panel.setLayout(null);

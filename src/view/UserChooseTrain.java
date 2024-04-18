@@ -45,7 +45,7 @@ public class UserChooseTrain extends javax.swing.JFrame {
 	static UserChooseTrain frame = new UserChooseTrain();
 	private static List<Train> trains = new ArrayList<Train>();
     public UserChooseTrain() {
-    	getContentPane().setBackground(new Color(102, 205, 170));
+    	getContentPane().setBackground(new Color(173, 216, 230));
         initComponents();
         TableActionEvent event = new TableActionEvent() {
 

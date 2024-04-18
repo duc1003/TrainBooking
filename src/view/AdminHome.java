@@ -44,7 +44,7 @@ public class AdminHome extends JFrame {
 		setBounds(100, 100, 1099, 492);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(34, 139, 34));
-		contentPane.setBackground(new Color(102, 205, 170));
+		contentPane.setBackground(new Color(173, 216, 230));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);

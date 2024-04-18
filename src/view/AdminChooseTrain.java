@@ -33,7 +33,7 @@ public class AdminChooseTrain extends javax.swing.JFrame {
      */
 	static AdminChooseTrain frame = new AdminChooseTrain();
     public AdminChooseTrain() {
-    	getContentPane().setBackground(new Color(102, 205, 170));
+    	getContentPane().setBackground(new Color(173, 216, 230));
         initComponents();
         TableActionEvent event = new TableActionEvent() {
 
